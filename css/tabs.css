@@ -84,7 +84,7 @@
 .tab-science { background: linear-gradient(180deg, #5ee076, #3ec254); }
 .tab-technology { background: linear-gradient(180deg, #ac7fff, #8550e6); }
 .tab-engineering { background: linear-gradient(180deg, #ffb066, #f08a28); }
-.tab-art { background: linear-gradient(180deg, #ffe066, #f0c820); color: var(--text); }
+.tab-art { background: linear-gradient(180deg, #f0c820, #d4a800); }
 .tab-math { background: linear-gradient(180deg, #66b0ff, #3a88e6); }
 
 /* ============================================

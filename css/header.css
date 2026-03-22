@@ -116,11 +116,6 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-/* Yellow letter dark text */
-.block-letter:nth-child(4) {
-  color: var(--text);
-}
-
 .title-text {
   font-size: 2rem;
   font-weight: 800;
