@@ -26,8 +26,7 @@ async function loadParts() {
 
       // Fix relative paths for subdirectory pages
       if (base !== '.') {
-        // Rewrite href="/" to point to the actual root
-        html = html.replace(/href="\/"/, `href="${base}/index.html"`);
+        html = html.replace(/href="index\.html"/, `href="${base}/index.html"`);
       }
 
       slot.outerHTML = html;
