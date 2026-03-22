@@ -1,0 +1,17 @@
+/* ============================================
+   Site Footer
+   ============================================ */
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem var(--page-pad);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer p {
+  margin: 0;
+}

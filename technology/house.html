@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart House Project | STEAM Summer Camp</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Shared parts -->
+  <div data-part="bg-blocks" data-base=".."></div>
+  <div data-part="header" data-base=".."></div>
+
+  <div class="page-wrapper" style="--project-accent: #9B6BFF;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../index.html#technology">Technology</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Smart House</span>
+    </nav>
+
+    <div class="project-hero">
+      <h1>IoT Smart House</h1>
+      <p>Build a smart house for your community using the ESP32 IoT kit. Learn how sensors, lights, and automation work together — then customize your house to serve your town.</p>
+    </div>
+
+    <!-- COMMUNITY DECISION -->
+    <section class="tutorial-section">
+      <h2>First: What Is Your House?</h2>
+      <p>Every building in a community serves a purpose. Before you start building, decide with your partner what role your house plays in your town.</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Hospital</h4>
+          <p>Red alert lights when there's an emergency. Sensors detect visitors at the door.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Fire Station</h4>
+          <p>Alarm system with flashing lights. Quick-response signals to alert vehicles.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Community Center</h4>
+          <p>Auto lights that welcome visitors. A meeting hub for the whole town.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Weather Station</h4>
+          <p>Sensors that respond to light and temperature. Keeps the town informed.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Power Plant</h4>
+          <p>Energy-saving auto lights. Monitors power use for the community.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Your Idea!</h4>
+          <p>Have a different idea? Talk to your teacher — if you can explain how it helps the town, go for it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 1 -->
+    <section class="tutorial-section">
+      <h2>Day 1 — What Is IoT?</h2>
+      <p>IoT stands for the <strong>Internet of Things</strong>. It means everyday objects — lights, doors, thermostats — that can sense their environment and react automatically. Your smart house will do exactly that.</p>
+
+      <div class="step-block">
+        <h3>Today's Goal</h3>
+        <p>Assemble the wooden house structure from the kit. Decide what your building will be and what role it plays in your community. Start thinking about what "smart" features it needs.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Questions to Answer With Your Partner</h3>
+        <p>What is your building called? Who uses it? What problem does it solve for your town? What should happen automatically (lights, alarms, sensors)?</p>
+      </div>
+    </section>
+
+    <!-- DAY 2 -->
+    <section class="tutorial-section">
+      <h2>Day 2 — LEDs: Lights That Communicate</h2>
+      <p>Lights aren't just for seeing in the dark — they send messages. A red light means stop. A flashing light means emergency. Today you'll wire up LEDs and make them communicate something for your building.</p>
+
+      <div class="step-block">
+        <h3>Starter Code: Blinking LED</h3>
+        <p>Upload this to your board. It makes an LED blink on and off every second.</p>
+      </div>
+
+      <div class="code-block"><code>int ledPin = 7;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+  digitalWrite(ledPin, LOW);
+  delay(1000);
+}</code></div>
+
+      <div class="step-block">
+        <h3>How It Works</h3>
+        <p><code>pinMode</code> tells the board that pin 7 is an output (it sends power out). <code>digitalWrite HIGH</code> turns the LED on. <code>LOW</code> turns it off. <code>delay(1000)</code> waits 1000 milliseconds (1 second) before the next step.</p>
+      </div>
+
+      <h3>Pick Your Challenge Level</h3>
+      <div class="block-grid">
+        <div class="info-block challenge-basic" style="--block-color: #4CD964;">
+          <h4>Basic</h4>
+          <p>Get the LED blinking. Change the delay numbers to make it blink faster or slower.</p>
+        </div>
+        <div class="info-block challenge-medium" style="--block-color: #4F9DFF;">
+          <h4>Medium</h4>
+          <p>Wire up 2 or 3 LEDs. Make them blink in a pattern — like a traffic signal or emergency strobe.</p>
+        </div>
+        <div class="info-block challenge-advanced" style="--block-color: #9B6BFF;">
+          <h4>Advanced</h4>
+          <p>Create a signal system for your building. What do different light patterns mean? Code at least 3 different signals.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <h3>Community Connection</h3>
+        <p>What do your lights tell the town? A hospital might flash red for emergencies. A fire station might use alternating red and white. A community center might glow a welcoming steady color. Decide what your lights <em>mean</em>.</p>
+      </div>
+    </section>
+
+    <!-- DAY 3 -->
+    <section class="tutorial-section">
+      <h2>Day 3 — Sensors: Your House Reacts</h2>
+      <p>Smart buildings don't just sit there — they <strong>respond</strong> to the world around them. Today you'll add a button and a light sensor so your house can detect things and react.</p>
+
+      <div class="step-block">
+        <h3>Code A: Button Controls Light</h3>
+        <p>Press the button, the light turns on. Let go, it turns off. Simple, but powerful.</p>
+      </div>
+
+      <div class="code-block"><code>int ledPin = 7;
+int buttonPin = 2;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+  int buttonState = digitalRead(buttonPin);
+
+  if (buttonState == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}</code></div>
+
+      <div class="step-block">
+        <h3>How It Works</h3>
+        <p><code>digitalRead</code> checks whether the button is being pressed (<code>HIGH</code>) or not (<code>LOW</code>). The <code>if</code> statement is a rule: <em>if the button is pressed, turn the light on</em>. This is the foundation of all smart devices — <strong>if something happens, then do something</strong>.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Code B: Auto Lights (Light Sensor)</h3>
+        <p>This one is magic — the house turns its own lights on when it gets dark.</p>
+      </div>
+
+      <div class="code-block"><code>int lightPin = A0;
+int ledPin = 7;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int lightValue = analogRead(lightPin);
+  Serial.println(lightValue);
+
+  if (lightValue < 500) {
+    // It's dark — turn the light on
+    digitalWrite(ledPin, HIGH);
+  } else {
+    // It's bright — light off
+    digitalWrite(ledPin, LOW);
+  }
+
+  delay(500);
+}</code></div>
+
+      <div class="step-block">
+        <h3>How It Works</h3>
+        <p><code>analogRead</code> reads the light sensor and gives a number. Low numbers mean it's dark. High numbers mean it's bright. We set a threshold at 500 — you can change that number to make your house more or less sensitive. Open the Serial Monitor to see the live numbers!</p>
+      </div>
+
+      <h3>Pick Your Challenge Level</h3>
+      <div class="block-grid">
+        <div class="info-block challenge-basic" style="--block-color: #4CD964;">
+          <h4>Basic</h4>
+          <p>Get the button controlling the LED. Think of it as a doorbell for your building.</p>
+        </div>
+        <div class="info-block challenge-medium" style="--block-color: #4F9DFF;">
+          <h4>Medium</h4>
+          <p>Get the auto-light working. Adjust the threshold so it triggers at the right time. Cover the sensor with your hand to test it.</p>
+        </div>
+        <div class="info-block challenge-advanced" style="--block-color: #9B6BFF;">
+          <h4>Advanced</h4>
+          <p>Combine both! Button AND light sensor controlling lights. Can you make the button override the automatic system?</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 4 -->
+    <section class="tutorial-section">
+      <h2>Day 4 — Automation: Smart Rules</h2>
+      <p>Real smart buildings follow <strong>rules</strong>. "If it gets dark, turn on lights." "If someone presses the emergency button, flash the alarm." Today you'll combine everything into a rule-based system — just like a real IoT building.</p>
+
+      <div class="step-block">
+        <h3>Smart Rule Code</h3>
+        <p>This code combines the light sensor AND the button. The house reacts to either one.</p>
+      </div>
+
+      <div class="code-block"><code>int lightPin = A0;
+int buttonPin = 2;
+int ledPin = 7;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+  int lightValue = analogRead(lightPin);
+  int buttonState = digitalRead(buttonPin);
+
+  // Rule: Turn on lights if it's dark OR emergency button is pressed
+  if (buttonState == HIGH || lightValue < 400) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}</code></div>
+
+      <div class="step-block">
+        <h3>The Key Idea</h3>
+        <p>The <code>||</code> symbol means <strong>OR</strong>. So the rule says: "If the button is pressed OR it's dark, turn the light on." You can also use <code>&&</code> which means <strong>AND</strong> — that would mean BOTH conditions need to be true. Technology follows rules, just like a community does.</p>
+      </div>
+
+      <h3>Write Your Smart Laws</h3>
+      <p>Every building in your community needs rules. Write them in plain English first, then turn them into code.</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #FF9F43;">
+          <h4>Example Rules</h4>
+          <p>"If it's nighttime, turn on the porch light." / "If emergency button is pressed, flash all lights." / "If it's bright out AND no one's pressed the button, stay dark and save power."</p>
+        </div>
+        <div class="info-block" style="--block-color: #FF9F43;">
+          <h4>Your Turn</h4>
+          <p>Write 2-3 rules for your building. What does your building need to detect? What should it do in response? Code it!</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <h3>Share With Your Community</h3>
+        <p>At the end of today, present your building to your community group. Explain: What is your building? What are its smart rules? How does it help the town? What would you add with more time?</p>
+      </div>
+    </section>
+
+    <a href="../index.html#technology" class="back-link">Back to Technology</a>
+  </div>
+
+  <div data-part="footer" data-base=".."></div>
+
+  <script src="../parts/loader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

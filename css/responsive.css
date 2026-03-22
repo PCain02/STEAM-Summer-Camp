@@ -1,0 +1,76 @@
+/* ============================================
+   Responsive Breakpoints
+   ============================================ */
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 2rem var(--page-pad) 1.5rem;
+  }
+
+  .site-title {
+    font-size: 1.8rem;
+  }
+
+  .block-letter {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.2rem;
+  }
+
+  .block-letter::before {
+    width: 10px;
+    height: 5px;
+    top: -5px;
+  }
+
+  .title-text {
+    font-size: 1.4rem;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.25rem;
+  }
+
+  .tab-nav {
+    gap: 0.25rem;
+    padding: 0 1rem;
+  }
+
+  .tab {
+    padding: 0.65rem 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .tab-icon { font-size: 1.15rem; }
+  .tab-label { font-size: 0.6rem; }
+
+  .tab-panels {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .panel-header,
+  .panel-body {
+    padding: 1.25rem 1rem;
+  }
+
+  .project-hero {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-label {
+    display: none;
+  }
+
+  .tab {
+    padding: 0.7rem;
+  }
+
+  .tab-icon {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,208 @@
+/* ============================================
+   Project Pages (House, Car, etc.)
+   Breadcrumbs, hero, tutorial steps, code blocks
+   ============================================ */
+
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--page-pad) 3rem;
+}
+
+/* ============================================
+   Breadcrumb Navigation
+   ============================================ */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  color: var(--technology);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: var(--border);
+}
+
+/* ============================================
+   Project Hero
+   ============================================ */
+
+.project-hero {
+  background: linear-gradient(145deg, #fefefe, #f5f0ff);
+  border: 2px solid var(--project-accent, var(--border));
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  animation: blockPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s backwards;
+  box-shadow:
+    0 4px 0 var(--project-accent, var(--border)),
+    0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.project-hero::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 22px;
+  width: 14px;
+  height: 7px;
+  background: var(--project-accent, var(--border));
+  border-radius: 5px 5px 0 0;
+}
+
+.project-hero::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 44px;
+  width: 14px;
+  height: 7px;
+  background: var(--project-accent, var(--border));
+  border-radius: 5px 5px 0 0;
+}
+
+.project-hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--project-accent, var(--text));
+}
+
+.project-hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  font-weight: 600;
+}
+
+/* ============================================
+   Tutorial Sections & Steps
+   ============================================ */
+
+.tutorial-section {
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.5s ease backwards;
+}
+
+.tutorial-section h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--alt);
+}
+
+.tutorial-section h3 {
+  font-weight: 800;
+}
+
+.tutorial-section p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.step-block {
+  background: var(--alt);
+  border: 2px solid var(--border);
+  border-left: 5px solid var(--project-accent, var(--technology));
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+  transition: transform 0.2s ease;
+}
+
+.step-block:hover {
+  transform: translateX(4px);
+}
+
+.step-block h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.step-block p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   Code Blocks
+   ============================================ */
+
+.code-block {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-family: "Fira Code", "Cascadia Code", "Consolas", monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  border: 2px solid #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.code-block::before {
+  content: "CODE";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--technology);
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0 var(--radius-sm) 0 var(--radius-sm);
+  letter-spacing: 0.08em;
+}
+
+.code-block code {
+  color: inherit;
+}
+
+/* ============================================
+   Back Link
+   ============================================ */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--technology);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--technology);
+  border-radius: 2rem;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: var(--technology);
+  color: #fff;
+  transform: translateX(-4px);
+}

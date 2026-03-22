@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEAM Summer Camp | Building Blocks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Shared parts -->
+  <div data-part="bg-blocks"></div>
+  <div data-part="header"></div>
+
+  <nav class="tab-nav" role="tablist" aria-label="STEAM navigation">
+    <button class="tab tab-science" role="tab" aria-selected="true" data-panel="science">
+      <span class="tab-icon">S</span>
+      <span class="tab-label">Science</span>
+    </button>
+    <button class="tab tab-technology" role="tab" aria-selected="false" data-panel="technology">
+      <span class="tab-icon">T</span>
+      <span class="tab-label">Technology</span>
+    </button>
+    <button class="tab tab-engineering" role="tab" aria-selected="false" data-panel="engineering">
+      <span class="tab-icon">E</span>
+      <span class="tab-label">Engineering</span>
+    </button>
+    <button class="tab tab-art" role="tab" aria-selected="false" data-panel="art">
+      <span class="tab-icon">A</span>
+      <span class="tab-label">Art</span>
+    </button>
+    <button class="tab tab-math" role="tab" aria-selected="false" data-panel="math">
+      <span class="tab-icon">M</span>
+      <span class="tab-label">Math</span>
+    </button>
+  </nav>
+
+  <main class="tab-panels">
+    <!-- SCIENCE -->
+    <section id="science" class="panel active" role="tabpanel" aria-labelledby="science-tab">
+      <div class="panel-header" style="--panel-accent: #4CD964;">
+        <h2>Science</h2>
+        <p class="panel-intro">Explore experiments, observation, and the scientific method through hands-on discovery.</p>
+      </div>
+      <div class="panel-body">
+        <div class="content-block">
+          <h3>What We'll Explore</h3>
+          <p>Science is all about asking questions and finding answers. This summer, we'll run real experiments, make observations, and learn how the world works — from chemical reactions to ecosystems.</p>
+        </div>
+        <div class="block-grid">
+          <div class="info-block" style="--block-color: #4CD964;">
+            <h4>Hypothesis Lab</h4>
+            <p>Learn to form and test hypotheses like a real scientist.</p>
+          </div>
+          <div class="info-block" style="--block-color: #4CD964;">
+            <h4>Nature Walk</h4>
+            <p>Observe and catalog living things in our outdoor exploration sessions.</p>
+          </div>
+          <div class="info-block" style="--block-color: #4CD964;">
+            <h4>Kitchen Chemistry</h4>
+            <p>Safe, exciting experiments using everyday household items.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="technology" class="panel" role="tabpanel" aria-labelledby="technology-tab" hidden>
+      <div class="panel-header" style="--panel-accent: #9B6BFF;">
+        <h2>Technology</h2>
+        <p class="panel-intro">Build real electronics projects with Arduino, sensors, and motors — then program them to serve your community.</p>
+      </div>
+      <div class="panel-body">
+        <div class="content-block">
+          <h3>Community Projects</h3>
+          <p>Each pair will build one house and one car. Work with your community group of 6 to create a town where the buildings and vehicles work together. Pick your project below to get started.</p>
+        </div>
+        <div class="project-grid">
+          <a href="technology/house.html" class="project-card" style="--card-accent: #9B6BFF;">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 32L32 12L56 32" />
+                <rect x="14" y="32" width="36" height="24" />
+                <rect x="26" y="40" width="12" height="16" />
+                <rect x="18" y="36" width="8" height="8" />
+                <rect x="38" y="36" width="8" height="8" />
+              </svg>
+            </div>
+            <h4>IoT Smart House</h4>
+            <p>Build a smart house with the ESP32 IoT kit. Wire up sensors, LEDs, and automation rules — then customize it as a hospital, fire station, or community center.</p>
+            <span class="project-card-link">Week 1: Days 1-4</span>
+          </a>
+          <a href="technology/car.html" class="project-card" style="--card-accent: #9B6BFF;">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 38H58V48H6z" />
+                <path d="M14 38L20 24H44L50 38" />
+                <circle cx="18" cy="48" r="5" />
+                <circle cx="46" cy="48" r="5" />
+                <rect x="28" y="28" width="8" height="10" rx="1" />
+              </svg>
+            </div>
+            <h4>Robot Car</h4>
+            <p>Build and program a robot car with the ELEGOO Smart Car kit. Control motors, add lights and sounds, then program it as an ambulance, bus, plow truck, or your own idea.</p>
+            <span class="project-card-link">Week 2: Days 5-8</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGINEERING -->
+    <section id="engineering" class="panel" role="tabpanel" aria-labelledby="engineering-tab" hidden>
+      <div class="panel-header" style="--panel-accent: #FF9F43;">
+        <h2>Engineering</h2>
+        <p class="panel-intro">Design structures, solve real problems, and build prototypes with your own hands.</p>
+      </div>
+      <div class="panel-body">
+        <div class="content-block">
+          <h3>What We'll Build</h3>
+          <p>Engineering is about turning ideas into reality. We'll design, test, and improve real structures and machines using the engineering design process.</p>
+        </div>
+        <div class="block-grid">
+          <div class="info-block" style="--block-color: #FF9F43;">
+            <h4>Bridge Challenge</h4>
+            <p>Design a bridge that can hold the most weight using limited materials.</p>
+          </div>
+          <div class="info-block" style="--block-color: #FF9F43;">
+            <h4>Tower Build</h4>
+            <p>Construct the tallest freestanding tower with everyday supplies.</p>
+          </div>
+          <div class="info-block" style="--block-color: #FF9F43;">
+            <h4>Egg Drop</h4>
+            <p>Engineer a container that protects an egg from a high drop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ART -->
+    <section id="art" class="panel" role="tabpanel" aria-labelledby="art-tab" hidden>
+      <div class="panel-header" style="--panel-accent: #FFD93D;">
+        <h2>Art</h2>
+        <p class="panel-intro">Use color, shape, and pattern to express your creativity and bring STEAM to life.</p>
+      </div>
+      <div class="panel-body">
+        <div class="content-block">
+          <h3>What We'll Create</h3>
+          <p>Art connects everything in STEAM together. We'll explore how design, color theory, and creative thinking make science, tech, and engineering even more powerful.</p>
+        </div>
+        <div class="block-grid">
+          <div class="info-block" style="--block-color: #FFD93D;">
+            <h4>Color Theory</h4>
+            <p>Mix, match, and understand how colors work together in design.</p>
+          </div>
+          <div class="info-block" style="--block-color: #FFD93D;">
+            <h4>Geometric Art</h4>
+            <p>Create beautiful patterns using math, rulers, and compasses.</p>
+          </div>
+          <div class="info-block" style="--block-color: #FFD93D;">
+            <h4>Digital Design</h4>
+            <p>Learn the basics of graphic design and make your own creations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATH -->
+    <section id="math" class="panel" role="tabpanel" aria-labelledby="math-tab" hidden>
+      <div class="panel-header" style="--panel-accent: #4F9DFF;">
+        <h2>Math</h2>
+        <p class="panel-intro">Build number sense, geometry, and logic with puzzles, games, and challenges.</p>
+      </div>
+      <div class="panel-body">
+        <div class="content-block">
+          <h3>What We'll Solve</h3>
+          <p>Math is the foundation of everything in STEAM. We'll tackle real-world problems, build spatial reasoning, and discover that math is way more fun than a worksheet.</p>
+        </div>
+        <div class="block-grid">
+          <div class="info-block" style="--block-color: #4F9DFF;">
+            <h4>Logic Puzzles</h4>
+            <p>Crack codes, solve riddles, and train your brain with logical thinking.</p>
+          </div>
+          <div class="info-block" style="--block-color: #4F9DFF;">
+            <h4>Shape Builders</h4>
+            <p>Explore geometry by constructing 2D and 3D shapes from blocks.</p>
+          </div>
+          <div class="info-block" style="--block-color: #4F9DFF;">
+            <h4>Measurement Lab</h4>
+            <p>Measure, estimate, and compare real-world objects and distances.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-part="footer"></div>
+
+  <script src="parts/loader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

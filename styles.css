@@ -1,0 +1,13 @@
+/* ============================================
+   STEAM Summer Camp — Main Stylesheet
+   Imports all partials from /css
+   ============================================ */
+
+@import url('css/variables.css');
+@import url('css/animations.css');
+@import url('css/header.css');
+@import url('css/tabs.css');
+@import url('css/blocks.css');
+@import url('css/footer.css');
+@import url('css/project-pages.css');
+@import url('css/responsive.css');

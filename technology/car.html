@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robot Car Project | STEAM Summer Camp</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Shared parts -->
+  <div data-part="bg-blocks" data-base=".."></div>
+  <div data-part="header" data-base=".."></div>
+
+  <div class="page-wrapper" style="--project-accent: #9B6BFF;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../index.html#technology">Technology</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Robot Car</span>
+    </nav>
+
+    <div class="project-hero">
+      <h1>Community Robot Car</h1>
+      <p>Build and program a robot car using the ELEGOO Smart Car Kit. Your car will serve your community — as an ambulance, a bus, a plow truck, or whatever your town needs.</p>
+    </div>
+
+    <!-- COMMUNITY DECISION -->
+    <section class="tutorial-section">
+      <h2>First: What Service Does Your Car Provide?</h2>
+      <p>Every vehicle in a community has a job. Decide with your partner what your robot car does for the town. This will change how you program it.</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Ambulance</h4>
+          <p>Flashing lights, siren sounds, fast response. Rushes to the hospital house when there's an emergency.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Snow Plow</h4>
+          <p>Slow and steady. Clears the roads for other vehicles. Reliable, never stops.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Bus</h4>
+          <p>Stop-and-go route. Picks up and drops off passengers at each building in town.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Delivery Bot</h4>
+          <p>Carries supplies between buildings. Navigates a route and returns to base.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Police Car</h4>
+          <p>Patrols the streets with lights. Responds to alerts from community buildings.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Your Idea!</h4>
+          <p>Fire truck? Taxi? Ice cream truck? If you can explain how it helps, build it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 5 -->
+    <section class="tutorial-section">
+      <h2>Day 5 — Build the Robot Base</h2>
+      <p>Every robot starts as a pile of parts. Today you'll assemble the chassis (that's the frame and body), mount the motors, and wire up the motor driver board.</p>
+
+      <div class="step-block">
+        <h3>Today's Goal</h3>
+        <p>Follow the kit instructions to build the car chassis. Mount the 2 DC motors and connect them to the L298N motor driver. Make sure everything is secure — a loose wire will cause headaches later.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>What Is a Motor Driver?</h3>
+        <p>The Arduino board is the brain, but it can't power motors directly — they need too much electricity. The L298N motor driver is like a middleman: the Arduino tells it what to do, and it sends the right power to the motors. Four control pins (IN1-IN4) tell each motor which direction to spin.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Pin Connections (Write These Down!)</h3>
+        <p>IN1 = Pin 8, IN2 = Pin 9 (Left Motor) / IN3 = Pin 10, IN4 = Pin 11 (Right Motor). Your kit may differ — check the included guide and update the pin numbers in your code if needed.</p>
+      </div>
+    </section>
+
+    <!-- DAY 6 -->
+    <section class="tutorial-section">
+      <h2>Day 6 — Movement: Making It Drive</h2>
+      <p>Time to make your car move. You'll start with the basics — forward, backward, turning — then program movement patterns that match your vehicle's job.</p>
+
+      <div class="step-block">
+        <h3>Starter Code: Forward and Stop</h3>
+        <p>Upload this to see your car drive forward for 2 seconds, then stop for 2 seconds, on repeat.</p>
+      </div>
+
+      <div class="code-block"><code>int IN1 = 8;
+int IN2 = 9;
+int IN3 = 10;
+int IN4 = 11;
+
+void setup() {
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+}
+
+void loop() {
+  // Forward: both motors spin the same direction
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+
+  delay(2000);
+
+  // Stop: all pins LOW
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+
+  delay(2000);
+}</code></div>
+
+      <div class="step-block">
+        <h3>How It Works</h3>
+        <p>Each motor has two control pins. Setting one HIGH and the other LOW makes it spin one direction. Swapping them makes it spin the other way. Setting both LOW stops it. That's it — forward, backward, and stop are just different combinations of HIGH and LOW.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Turning</h3>
+        <p>To turn, you run only one motor. The car pivots around the stopped wheel.</p>
+      </div>
+
+      <div class="code-block"><code>// Turn Right: left motor on, right motor off
+digitalWrite(IN1, HIGH);
+digitalWrite(IN2, LOW);
+digitalWrite(IN3, LOW);
+digitalWrite(IN4, LOW);
+
+// Turn Left: right motor on, left motor off
+digitalWrite(IN1, LOW);
+digitalWrite(IN2, LOW);
+digitalWrite(IN3, HIGH);
+digitalWrite(IN4, LOW);</code></div>
+
+      <h3>Pick Your Challenge Level</h3>
+      <div class="block-grid">
+        <div class="info-block challenge-basic" style="--block-color: #4CD964;">
+          <h4>Basic</h4>
+          <p>Get the car moving forward and stopping. Try changing the delay numbers to control how far it goes.</p>
+        </div>
+        <div class="info-block challenge-medium" style="--block-color: #4F9DFF;">
+          <h4>Medium</h4>
+          <p>Program a full route: forward, turn right, forward, turn left. Make the car drive in a square.</p>
+        </div>
+        <div class="info-block challenge-advanced" style="--block-color: #9B6BFF;">
+          <h4>Advanced</h4>
+          <p>Create reusable functions (see below) and program a complete route through your community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 7 -->
+    <section class="tutorial-section">
+      <h2>Day 7 — Features: Give Your Car a Personality</h2>
+      <p>A robot that just drives is boring. Today you'll add lights, sounds, and behavior patterns that match your vehicle's role in the community.</p>
+
+      <div class="step-block">
+        <h3>Clean Code With Functions</h3>
+        <p>Instead of repeating the same pin commands over and over, let's create named functions. This makes your code easier to read and modify.</p>
+      </div>
+
+      <div class="code-block"><code>int IN1 = 8;
+int IN2 = 9;
+int IN3 = 10;
+int IN4 = 11;
+
+void setup() {
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+}
+
+void moveForward() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+void moveBackward() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+void turnRight() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
+
+void turnLeft() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+void stopCar() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
+
+void loop() {
+  moveForward();
+  delay(2000);
+
+  turnRight();
+  delay(800);
+
+  moveForward();
+  delay(2000);
+
+  stopCar();
+  delay(1000);
+}</code></div>
+
+      <div class="step-block">
+        <h3>What Are Functions?</h3>
+        <p>A function is a named chunk of code you can reuse. Instead of writing all 4 <code>digitalWrite</code> lines every time, you just say <code>moveForward()</code>. Think of it like naming a play in a sport — one word and everyone knows what to do.</p>
+      </div>
+
+      <h3>Vehicle Behavior Recipes</h3>
+      <p>Pick the recipe that matches your car's role, then modify it to make it your own.</p>
+
+      <div class="step-block">
+        <h3>Ambulance Mode</h3>
+        <p>Fast movement with flashing emergency lights.</p>
+      </div>
+
+      <div class="code-block"><code>int ledPin = 7;
+
+void setup() {
+  // ... motor pins setup ...
+  pinMode(ledPin, OUTPUT);
+}
+
+void ambulanceRun() {
+  moveForward();
+
+  // Flash lights while driving
+  digitalWrite(ledPin, HIGH);
+  delay(200);
+  digitalWrite(ledPin, LOW);
+  delay(200);
+  digitalWrite(ledPin, HIGH);
+  delay(200);
+  digitalWrite(ledPin, LOW);
+  delay(200);
+}</code></div>
+
+      <div class="step-block">
+        <h3>Bus Route Mode</h3>
+        <p>Stop-and-go pattern. Drives to a stop, waits, then continues.</p>
+      </div>
+
+      <div class="code-block"><code>void busRoute() {
+  // Drive to stop 1
+  moveForward();
+  delay(2000);
+
+  // Stop for passengers
+  stopCar();
+  delay(3000);
+
+  // Drive to stop 2
+  moveForward();
+  delay(2000);
+
+  // Turn onto next street
+  turnRight();
+  delay(800);
+
+  // Stop for passengers
+  stopCar();
+  delay(3000);
+}</code></div>
+
+      <div class="step-block">
+        <h3>Snow Plow Mode</h3>
+        <p>Slow, steady back-and-forth sweeping pattern.</p>
+      </div>
+
+      <div class="code-block"><code>void snowPlow() {
+  // Slow steady forward sweep
+  moveForward();
+  delay(3000);
+
+  // Turn around
+  turnRight();
+  delay(1500);
+
+  // Sweep back
+  moveForward();
+  delay(3000);
+
+  // Turn around for next pass
+  turnLeft();
+  delay(1500);
+}</code></div>
+
+      <div class="step-block">
+        <h3>Add Sound (If Your Kit Has a Buzzer)</h3>
+        <p>Some kits include a buzzer. If yours does, you can add sirens, horns, or jingles.</p>
+      </div>
+
+      <div class="code-block"><code>int buzzer = 6;
+
+void setup() {
+  pinMode(buzzer, OUTPUT);
+}
+
+// Simple siren
+void siren() {
+  tone(buzzer, 1000);  // high pitch
+  delay(300);
+  tone(buzzer, 600);   // low pitch
+  delay(300);
+  noTone(buzzer);
+}
+
+// Quick honk
+void honk() {
+  tone(buzzer, 800);
+  delay(150);
+  noTone(buzzer);
+}</code></div>
+
+    </section>
+
+    <!-- DAY 8 -->
+    <section class="tutorial-section">
+      <h2>Day 8 — Community Showcase</h2>
+      <p>This is it — the day your community comes together. All 3 pairs in your group will combine their projects into one working town. Houses and cars, all connected by the story of your community.</p>
+
+      <div class="step-block">
+        <h3>Setup</h3>
+        <p>Arrange your community's 3 houses on the table. Mark out roads between them with tape. Position your 3 cars at their starting points. This is your town.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Tell the Story</h3>
+        <p>Each community will present their town. Be ready to answer: What is your town called? What does each building do? What services do the cars provide? How do they work together? Show us a demo!</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Connection Ideas</h3>
+        <p>Can a house's emergency light signal that the ambulance car should respond? Can the bus visit each building in order? Can the plow clear a path before the delivery bot drives through? Even if the connection is acted out rather than coded, it shows how technology works as a system.</p>
+      </div>
+    </section>
+
+    <a href="../index.html#technology" class="back-link">Back to Technology</a>
+  </div>
+
+  <div data-part="footer" data-base=".."></div>
+
+  <script src="../parts/loader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
