@@ -51,6 +51,40 @@
   flex-shrink: 0;
 }
 
+/* ============================================
+   Brochure Link (top-right corner)
+   ============================================ */
+
+.brochure-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.brochure-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.brochure-link svg {
+  flex-shrink: 0;
+}
+
 .site-title {
   margin: 0;
   font-size: 2.5rem;
