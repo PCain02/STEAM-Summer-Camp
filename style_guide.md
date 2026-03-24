@@ -24,6 +24,7 @@ Create a modular, tab-based interface inspired by a file system or code editor, 
 ### STEAM Color Mapping
 Each tab and its content is themed consistently:
 
+
 - S (Science) → #4CD964 (Green)
 - T (Technology) → #9B6BFF (Purple)
 - E (Engineering) → #FF9F43 (Orange)
