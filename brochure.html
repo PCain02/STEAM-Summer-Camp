@@ -19,15 +19,15 @@
       --bg: #F0F4FF;
       --surface: #FFFFFF;
       --border: #E5E7EB;
-      --radius: 1rem;
-      --radius-sm: 0.6rem;
+      --radius: 0.75rem;
+      --radius-sm: 0.5rem;
     }
 
     body {
       font-family: 'Quicksand', system-ui, sans-serif;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     h1, h2, h3, h4 {
@@ -35,32 +35,27 @@
     }
 
     /* ============================================
-       PAGE 1 — COVER
+       BROCHURE WRAPPER
        ============================================ */
 
-    .page {
+    .brochure {
       width: 8.5in;
-      min-height: 11in;
       margin: 0 auto;
       background: var(--surface);
+    }
+
+    /* ============================================
+       COMPACT COVER BANNER
+       ============================================ */
+
+    .cover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      padding: 0.5in 0.8in 0.4in;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    /* Cover hero */
-    .cover {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-      padding: .25in 1in .25in;
-      text-align: center;
-      position: relative;
-      min-height: 5.5in;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Decorative blocks on cover */
     .cover::before,
     .cover::after {
       content: "";
@@ -69,50 +64,24 @@
       opacity: 0.12;
     }
     .cover::before {
-      width: 120px; height: 120px;
+      width: 80px; height: 80px;
       background: #FFD93D;
-      top: 40px; left: 50px;
+      top: 15px; left: 40px;
       transform: rotate(15deg);
     }
     .cover::after {
-      width: 80px; height: 80px;
-      background: #4CD964;
-      top: 80px; right: 60px;
-      transform: rotate(-20deg);
-    }
-
-    .cover-deco-1,
-    .cover-deco-2,
-    .cover-deco-3 {
-      position: absolute;
-      border-radius: var(--radius-sm);
-      opacity: 0.1;
-    }
-    .cover-deco-1 {
       width: 60px; height: 60px;
-      background: #4F9DFF;
-      bottom: 120px; left: 80px;
-      transform: rotate(25deg);
-    }
-    .cover-deco-2 {
-      width: 100px; height: 100px;
-      background: #FF9F43;
-      bottom: 60px; right: 40px;
-      transform: rotate(-12deg);
-    }
-    .cover-deco-3 {
-      width: 50px; height: 50px;
-      background: #9B6BFF;
-      bottom: 180px; right: 120px;
-      transform: rotate(35deg);
+      background: #4CD964;
+      top: 20px; right: 50px;
+      transform: rotate(-20deg);
     }
 
     .steam-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
       position: relative;
       z-index: 2;
     }
@@ -121,18 +90,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 3.2rem;
-      height: 3.2rem;
+      width: 2.4rem;
+      height: 2.4rem;
       background: var(--accent);
       color: #fff;
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: 1.7rem;
+      font-size: 1.3rem;
       border-radius: var(--radius-sm);
       position: relative;
       box-shadow:
-        0 4px 0 rgba(0, 0, 0, 0.2),
-        0 6px 12px rgba(0, 0, 0, 0.15),
+        0 3px 0 rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.15),
         inset 0 2px 0 rgba(255, 255, 255, 0.3),
         inset 0 -2px 0 rgba(0, 0, 0, 0.1);
     }
@@ -140,59 +109,60 @@
     .block-letter::before {
       content: "";
       position: absolute;
-      top: -7px;
+      top: -6px;
       left: 50%;
       transform: translateX(-50%);
-      width: 14px;
-      height: 7px;
+      width: 12px;
+      height: 6px;
       background: var(--accent);
       border-radius: 4px 4px 0 0;
       box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
     .cover-title {
-      font-size: 2.6rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #fff;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.2rem;
       position: relative;
       z-index: 2;
     }
 
     .cover-subtitle {
-      font-size: 1.15rem;
+      font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.9);
       font-weight: 600;
       position: relative;
       z-index: 2;
-      max-width: 5in;
+      max-width: 5.5in;
+      margin: 0 auto;
     }
 
-    /* Cover bottom info bar */
-    .cover-info {
+    /* Quick stats bar */
+    .stats-bar {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem 1in;
+      gap: 1.5rem;
+      padding: 0.4rem 0.8in;
       background: var(--surface);
-      border-bottom: 3px solid var(--border);
+      border-bottom: 2px solid var(--border);
     }
 
-    .cover-info-item {
+    .stat {
       text-align: center;
     }
 
-    .cover-info-item strong {
+    .stat strong {
       display: block;
       font-family: 'Fredoka', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--technology);
     }
 
-    .cover-info-item span {
-      font-size: 0.8rem;
+    .stat span {
+      font-size: 0.65rem;
       font-weight: 700;
       color: var(--muted);
       text-transform: uppercase;
@@ -200,62 +170,61 @@
     }
 
     /* ============================================
-       CONTENT SECTIONS
+       CONTENT AREA
        ============================================ */
 
     .content {
-      padding: 0.25in 0.9in;
+      padding: 0.3in 0.7in;
     }
 
     .section {
-      margin-bottom: 1.4rem;
+      margin-bottom: 0.55rem;
     }
 
     .section-title {
-      font-size: 1.25rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      margin-bottom: 0.6rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 3px solid var(--border);
+      margin-bottom: 0.3rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .section-title .dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 3px;
       flex-shrink: 0;
     }
 
-    .section p {
+    .section > p {
       color: var(--muted);
       font-weight: 600;
-      font-size: 0.92rem;
-      line-height: 1.7;
+      font-size: 0.78rem;
+      line-height: 1.55;
     }
 
-    /* Skills grid */
+    /* Two-column skills */
     .skills-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 0.5rem;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
     }
 
     .skill-box {
       border: 2px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.9rem 1rem;
-      position: relative;
-      border-left: 5px solid var(--accent);
+      padding: 0.4rem 0.6rem;
+      border-left: 4px solid var(--accent);
     }
 
     .skill-box h4 {
-      font-size: 0.95rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.15rem;
       color: var(--accent);
     }
 
@@ -265,11 +234,10 @@
     }
 
     .skill-list li {
-      font-size: 0.85rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--muted);
-      padding: 0.15rem 0;
-      padding-left: 1.1rem;
+      padding: 0.08rem 0 0.08rem 0.9rem;
       position: relative;
     }
 
@@ -279,8 +247,8 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 2px;
       background: var(--accent);
       opacity: 0.5;
@@ -290,103 +258,125 @@
     .project-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 0.6rem;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
     }
 
     .project-card {
       background: linear-gradient(145deg, #fefefe, #f5f0ff);
       border: 2px solid var(--technology);
       border-radius: var(--radius);
-      padding: 1rem 1.1rem;
+      padding: 0.5rem 0.6rem;
       position: relative;
-      box-shadow: 0 4px 0 var(--technology), 0 6px 12px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 3px 0 var(--technology);
     }
 
     .project-card::before,
     .project-card::after {
       content: "";
       position: absolute;
-      top: -7px;
-      width: 14px;
-      height: 7px;
+      top: -6px;
+      width: 12px;
+      height: 6px;
       background: var(--technology);
-      border-radius: 5px 5px 0 0;
+      border-radius: 4px 4px 0 0;
     }
-    .project-card::before { left: 16px; }
-    .project-card::after { left: 36px; }
+    .project-card::before { left: 12px; }
+    .project-card::after { left: 28px; }
 
     .project-card h4 {
-      font-size: 1rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--technology);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.15rem;
     }
 
     .project-card p {
-      font-size: 0.82rem;
+      font-size: 0.7rem;
       color: var(--muted);
       font-weight: 600;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
-    .project-card .week-tag {
+    .week-tag {
       display: inline-block;
-      margin-top: 0.4rem;
+      margin-top: 0.25rem;
       font-family: 'Fredoka', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       font-weight: 700;
       color: #fff;
       background: var(--technology);
-      padding: 0.15rem 0.6rem;
+      padding: 0.1rem 0.5rem;
       border-radius: 2rem;
     }
 
-    /* Community build list */
+    /* Community build items */
     .build-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.5rem 1rem;
-      margin-top: 0.5rem;
+      gap: 0.25rem 0.8rem;
+      margin-top: 0.3rem;
     }
 
     .build-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
+      gap: 0.4rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--muted);
-      padding: 0.35rem 0;
+      padding: 0.2rem 0;
     }
 
     .build-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       flex-shrink: 0;
       color: #fff;
       font-weight: 700;
       box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
     }
 
-    /* Daily schedule */
-    .schedule-grid {
+    /* Courses chips */
+    .courses-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .course-chip {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+      padding: 0.35rem 0.3rem;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.62rem;
+      font-family: 'Fredoka', sans-serif;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      line-height: 1.3;
+    }
+
+    /* Schedule */
+    .schedule-row {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
     }
 
     .schedule-item {
       background: var(--bg);
       border-radius: var(--radius-sm);
-      padding: 0.55rem 0.75rem;
-      font-size: 0.82rem;
+      padding: 0.3rem 0.5rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: var(--text);
       text-align: center;
@@ -395,96 +385,72 @@
 
     .schedule-item .time-label {
       display: block;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       font-weight: 600;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.03em;
     }
 
-    /* Courses row */
-    .courses-row {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0.6rem;
-      margin-top: 0.6rem;
-    }
-
-    .course-chip {
-      text-align: center;
-      padding: 0.6rem 0.4rem;
-      border-radius: var(--radius-sm);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.72rem;
-      font-family: 'Fredoka', sans-serif;
-      box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-      line-height: 1.3;
-    }
-
-    /* Staff grid */
+    /* Staff */
     .staff-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-      margin-top: 0.5rem;
+      gap: 0.35rem;
+      margin-top: 0.3rem;
     }
 
     .staff-card {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.5rem;
       background: var(--bg);
       border: 2px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.6rem 0.8rem;
+      padding: 0.35rem 0.5rem;
     }
 
     .staff-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       flex-shrink: 0;
       box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
     }
 
-    .staff-info {
-      line-height: 1.3;
-    }
-
     .staff-name {
       font-weight: 800;
-      font-size: 0.85rem;
+      font-size: 0.72rem;
       color: var(--text);
     }
 
     .staff-role {
-      font-size: 0.72rem;
+      font-size: 0.6rem;
       font-weight: 600;
       color: var(--muted);
+      line-height: 1.3;
     }
 
-    /* Student profile callout */
+    /* Student callout */
     .callout {
       background: linear-gradient(145deg, #efe6ff, #f5f0ff);
       border: 2px solid var(--technology);
       border-radius: var(--radius);
-      padding: 1rem 1.2rem;
-      margin-top: 0.5rem;
-      position: relative;
+      padding: 0.5rem 0.7rem;
+      margin-top: 0.3rem;
     }
 
     .callout h4 {
-      font-size: 0.95rem;
+      font-size: 0.78rem;
       color: var(--technology);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.2rem;
     }
 
     .callout-list {
@@ -492,14 +458,14 @@
       padding: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.2rem 1rem;
+      gap: 0.1rem 0.8rem;
     }
 
     .callout-list li {
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--muted);
-      padding-left: 1.2rem;
+      padding-left: 1rem;
       position: relative;
     }
 
@@ -514,44 +480,44 @@
     /* Footer */
     .brochure-footer {
       text-align: center;
-      padding: 0.8rem 1in;
-      border-top: 3px solid var(--border);
-      font-size: 0.75rem;
+      padding: 0.35rem 0.8in;
+      border-top: 2px solid var(--border);
+      font-size: 0.65rem;
       font-weight: 700;
       color: var(--muted);
     }
 
     .brochure-footer .steam-mini {
       display: inline-flex;
-      gap: 0.25rem;
-      margin-right: 0.5rem;
+      gap: 0.2rem;
+      margin-right: 0.4rem;
       vertical-align: middle;
     }
 
     .brochure-footer .steam-mini span {
       display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
       color: #fff;
-      font-size: 0.5rem;
+      font-size: 0.4rem;
       font-weight: 700;
       font-family: 'Fredoka', sans-serif;
-      line-height: 12px;
+      line-height: 10px;
       text-align: center;
     }
 
     /* ============================================
-       PAGE BREAK FOR PRINTING
+       FORCED PAGE BREAK
        ============================================ */
 
     .page-break {
-      page-break-before: always;
       break-before: page;
+      page-break-before: always;
     }
 
     /* ============================================
-       PRINT STYLES
+       PRINT
        ============================================ */
 
     @media print {
@@ -560,36 +526,18 @@
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-      .page {
+      .brochure {
         width: auto;
-        min-height: auto;
-        margin: 0;
         box-shadow: none;
-        overflow: visible;
-      }
-      .content {
-        padding: 0.4in 0.75in;
-      }
-      .section {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .cover {
-        min-height: auto;
-        padding: 0.6in 0.8in;
-      }
-      .brochure-footer {
-        break-inside: avoid;
-        page-break-inside: avoid;
       }
     }
 
     /* ============================================
-       SCREEN SHADOW (looks like a paper)
+       SCREEN (paper look)
        ============================================ */
 
     @media screen {
-      .page {
+      .brochure {
         margin: 1.5rem auto;
         box-shadow: 0 8px 32px rgba(31, 41, 55, 0.12);
         border-radius: 4px;
@@ -599,13 +547,10 @@
 </head>
 <body>
 
-  <!-- ==================== PAGE 1: COVER ==================== -->
-  <div class="page">
-    <div class="cover">
-      <div class="cover-deco-1"></div>
-      <div class="cover-deco-2"></div>
-      <div class="cover-deco-3"></div>
+  <div class="brochure">
 
+    <!-- COVER BANNER -->
+    <div class="cover">
       <div class="steam-logo">
         <span class="block-letter" style="--accent: #4CD964;">S</span>
         <span class="block-letter" style="--accent: #9B6BFF;">T</span>
@@ -613,43 +558,28 @@
         <span class="block-letter" style="--accent: #E6AC00;">A</span>
         <span class="block-letter" style="--accent: #4F9DFF;">M</span>
       </div>
-
       <h1 class="cover-title">Adventure Camp</h1>
       <p class="cover-subtitle">An 8-day, hands-on learning program blending Science, Technology, Engineering, Art, and Math with real-world skills and community building.</p>
     </div>
 
-    <div class="cover-info">
-      <div class="cover-info-item">
-        <strong>8</strong>
-        <span>Days</span>
-      </div>
-      <div class="cover-info-item">
-        <strong>24</strong>
-        <span>Students</span>
-      </div>
-      <div class="cover-info-item">
-        <strong>4</strong>
-        <span>Teams</span>
-      </div>
-      <div class="cover-info-item">
-        <strong>8:30 - 2:30</strong>
-        <span>Daily Schedule</span>
-      </div>
+    <div class="stats-bar">
+      <div class="stat"><strong>8</strong><span>Days</span></div>
+      <div class="stat"><strong>24</strong><span>Students</span></div>
+      <div class="stat"><strong>4</strong><span>Teams</span></div>
+      <div class="stat"><strong>8:30–2:30</strong><span>Daily</span></div>
     </div>
 
+    <!-- PAGE 1 CONTENT -->
     <div class="content">
 
-      <!-- PROGRAM OVERVIEW -->
       <div class="section">
         <h2 class="section-title"><span class="dot" style="background: var(--technology);"></span> Program Overview</h2>
-        <p>The STEAM Adventure Camp is designed for middle school students seeking hands-on, project-based learning. Over 8 days, students work in structured teams to design and build a functioning community — complete with electronic houses, programmable robot cars, bridges, towers, and an economic system. The program culminates in an expo where each team presents the community they built.</p>
+        <p>The STEAM Adventure Camp is designed for middle school students seeking hands-on, project-based learning. Students work in structured teams to design and build a functioning community — complete with electronic houses, programmable robot cars, bridges, towers, and an economic system. The final day is an expo where each team presents the community they built.</p>
       </div>
 
-      <!-- SKILLS -->
       <div class="section">
         <h2 class="section-title"><span class="dot" style="background: var(--science);"></span> Program Focus</h2>
         <p>This program emphasizes both hard and soft skills essential for development in future education and in the workforce.</p>
-
         <div class="skills-row">
           <div class="skill-box" style="--accent: var(--technology);">
             <h4>Hard Skills</h4>
@@ -674,50 +604,26 @@
         </div>
       </div>
 
-      <!-- STUDENT PROFILE -->
-      <div class="section">
-        <h2 class="section-title"><span class="dot" style="background: var(--art);"></span> Ideal Student Profile</h2>
-        <div class="callout">
-          <h4>We are seeking students who are:</h4>
-          <ul class="callout-list">
-            <li>Curious and eager to learn</li>
-            <li>Strong listeners and team players</li>
-            <li>Willing to participate and commit</li>
-            <li>Interested in hands-on, project-based learning</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ==================== PAGE 2: DETAILS ==================== -->
-  <div class="page page-break">
-    <div class="content" style="padding-top: 0.9in;">
-
-      <!-- PROJECTS -->
       <div class="section">
         <h2 class="section-title"><span class="dot" style="background: var(--technology);"></span> Core Projects</h2>
-        <p>Students work in pairs to build one electronic house and one programmable car. Three pairs then form a community team of 6.</p>
-
+        <p>Students work in pairs to build one electronic house and one programmable car. Three pairs form a community team of 6.</p>
         <div class="project-row">
           <div class="project-card">
             <h4>IoT Smart House</h4>
             <p>Build a smart house with the ESP32 IoT kit. Wire up sensors, LEDs, and automation rules. Customize as a hospital, fire station, or community center.</p>
-            <span class="week-tag">Week 1: Days 1 - 4</span>
+            <span class="week-tag">Days 1–4</span>
           </div>
           <div class="project-card">
             <h4>Robot Car</h4>
             <p>Build and program a robot car with the ELEGOO Smart Car kit. Control motors, add lights and sounds. Program it as an ambulance, bus, or plow truck.</p>
-            <span class="week-tag">Week 2: Days 5 - 8</span>
+            <span class="week-tag">Days 5–8</span>
           </div>
         </div>
       </div>
 
-      <!-- COMMUNITY BUILDING -->
       <div class="section">
         <h2 class="section-title"><span class="dot" style="background: var(--engineering);"></span> Community Building</h2>
-        <p>Teams of 6 come together to build a full community around their electronic projects. Each community includes:</p>
+        <p>Teams of 6 come together to build a full community. Each includes:</p>
         <div class="build-grid">
           <div class="build-item">
             <div class="build-icon" style="background: var(--technology);">3</div>
@@ -736,64 +642,81 @@
             Buildings made of notecards
           </div>
         </div>
-        <p style="margin-top: 0.5rem;">Students also create an economic system, community structure and values, and infrastructure for their town.</p>
+        <p style="margin-top: 0.2rem;">Students also create an economic system, community structure and values, and infrastructure.</p>
       </div>
 
-      <!-- COURSES -->
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="page-break"></div>
+
+    <div class="content">
+
       <div class="section">
         <h2 class="section-title"><span class="dot" style="background: var(--math);"></span> Courses</h2>
         <div class="courses-row">
-          <div class="course-chip" style="background: var(--technology);">Robotics<br/>Programming</div>
+          <div class="course-chip" style="background: var(--technology);">Robotics &amp;<br/>Programming</div>
           <div class="course-chip" style="background: var(--science);">Electronics</div>
-          <div class="course-chip" style="background: var(--math);">Mathematical<br/>Problem Solving</div>
+          <div class="course-chip" style="background: var(--math);">Math Problem<br/>Solving</div>
           <div class="course-chip" style="background: var(--engineering);">Construction &amp;<br/>Engineering</div>
           <div class="course-chip" style="background: var(--art);">Communication<br/>Arts</div>
         </div>
       </div>
 
-      <!-- DAILY STRUCTURE -->
       <div class="section">
         <h2 class="section-title"><span class="dot" style="background: var(--science);"></span> Daily Structure</h2>
-        <p>The camp runs on a consistent yet flexible schedule, mirroring the existing school schedule.</p>
-        <div class="schedule-grid">
+        <p>The camp runs on a consistent yet flexible schedule, mirroring the existing school structure.</p>
+        <div class="schedule-row">
           <div class="schedule-item"><span class="time-label">Morning</span>Breakfast &amp; Classes</div>
           <div class="schedule-item"><span class="time-label">Midday</span>Snack &amp; Classes</div>
           <div class="schedule-item"><span class="time-label">Afternoon</span>Lunch &amp; Classes</div>
         </div>
       </div>
 
-      <!-- STAFF -->
       <div class="section">
         <h2 class="section-title"><span class="dot" style="background: var(--technology);"></span> Staff</h2>
         <div class="staff-grid">
           <div class="staff-card">
             <div class="staff-avatar" style="background: var(--math);">MC</div>
-            <div class="staff-info">
+            <div>
               <div class="staff-name">Michael Cain</div>
               <div class="staff-role">Program Director / Math Instructor</div>
             </div>
           </div>
           <div class="staff-card">
             <div class="staff-avatar" style="background: var(--technology);">PC</div>
-            <div class="staff-info">
+            <div>
               <div class="staff-name">Pallas Cain</div>
               <div class="staff-role">Robotics, Programming &amp; Electronics</div>
             </div>
           </div>
           <div class="staff-card">
             <div class="staff-avatar" style="background: var(--art);">LA</div>
-            <div class="staff-info">
+            <div>
               <div class="staff-name">Language Arts Teacher</div>
               <div class="staff-role">Communication Arts</div>
             </div>
           </div>
           <div class="staff-card">
             <div class="staff-avatar" style="background: var(--engineering);">SS</div>
-            <div class="staff-info">
+            <div>
               <div class="staff-name">Support Staff</div>
               <div class="staff-role">2 TAs + Allegheny Economics Professor</div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title"><span class="dot" style="background: var(--art);"></span> Ideal Student Profile</h2>
+        <div class="callout">
+          <h4>We are seeking students who are:</h4>
+          <ul class="callout-list">
+            <li>Curious and eager to learn</li>
+            <li>Strong listeners and team players</li>
+            <li>Willing to participate and commit</li>
+            <li>Interested in hands-on, project-based learning</li>
+          </ul>
         </div>
       </div>
 

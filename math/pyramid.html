@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierpinski Pyramid | STEAM Summer Camp</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Shared parts -->
+  <div data-part="bg-blocks" data-base=".."></div>
+  <div data-part="header" data-base=".."></div>
+
+  <div class="page-wrapper" style="--project-accent: #4F9DFF;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../index.html#math">Math</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Sierpinski Pyramid</span>
+    </nav>
+
+    <div class="project-hero">
+      <h1>Sierpinski Pyramid</h1>
+      <p>Build a giant Sierpinski tetrahedron — a fractal pyramid made of smaller pyramids, made of even smaller pyramids. Your entire community of 6 works together to color, fold, and assemble this mind-bending mathematical sculpture.</p>
+    </div>
+
+    <!-- WHAT IS A FRACTAL -->
+    <section class="tutorial-section">
+      <h2>What Is a Fractal?</h2>
+      <p>A fractal is a shape that looks the same no matter how much you zoom in. The same pattern repeats at every level — big, medium, small, tiny. They're everywhere in nature.</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Broccoli</h4>
+          <p>Break off a piece of broccoli. It looks like... a tiny broccoli. Break off a piece of that — same shape again!</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Snowflakes</h4>
+          <p>The branching patterns of a snowflake repeat at every scale. Each arm has smaller arms that look just like the big one.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Trees</h4>
+          <p>A tree trunk splits into branches. Each branch splits into smaller branches. Each of those splits again. Same pattern, different size.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Coastlines</h4>
+          <p>Zoom into a map of a coastline — the wiggly edge looks the same whether you're looking at a whole country or a single bay.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET THE SIERPINSKI TRIANGLE -->
+    <section class="tutorial-section">
+      <h2>Meet the Sierpinski Triangle</h2>
+      <p>The Sierpinski triangle is one of the most famous fractals. Here's how it works:</p>
+
+      <div class="step-block">
+        <h3>The Rule</h3>
+        <p>Start with a triangle. Connect the midpoints of each side to make a smaller triangle in the center. Remove that center triangle. Now you have 3 smaller triangles. Repeat the rule on each of those 3 triangles. Then repeat again. And again. Forever.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>The Math Behind It</h3>
+        <p>Each step triples the number of triangles. Step 0: <strong>1</strong> triangle. Step 1: <strong>3</strong>. Step 2: <strong>9</strong>. Step 3: <strong>27</strong>. That's 3 × 3 × 3 — or 3 to the power of the step number. This is called <strong>exponential growth</strong>, and it's why fractals get incredibly complex incredibly fast.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>From 2D to 3D</h3>
+        <p>The Sierpinski triangle is flat (2D). But what if we build it in 3D? Instead of triangles, we use <strong>tetrahedrons</strong> — pyramids with 4 triangular faces. A Sierpinski tetrahedron (or "Sierpinski pyramid") is the same fractal pattern, but as a real 3D object you can hold in your hands.</p>
+      </div>
+    </section>
+
+    <!-- THE BUILD PLAN -->
+    <section class="tutorial-section">
+      <h2>The Build Plan</h2>
+      <p>Your community of 6 will build a <strong>Stage 3</strong> Sierpinski pyramid. That means 64 individual tetrahedrons assembled into one giant structure. Here's how the stages work:</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #4CD964;">
+          <h4>Stage 0: One Tetrahedron</h4>
+          <p>A single paper pyramid. 4 triangular faces. This is the building block — every person makes several of these.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Stage 1: 4 Tetrahedrons</h4>
+          <p>Glue 4 Stage 0 pyramids together — one on each bottom corner and one on top. The center stays empty. This is where the fractal pattern begins!</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Stage 2: 16 Tetrahedrons</h4>
+          <p>Take 4 Stage 1 clusters and arrange them the same way — three on the bottom corners, one on top. Same pattern, bigger scale.</p>
+        </div>
+        <div class="info-block" style="--block-color: #FF9F43;">
+          <h4>Stage 3: 64 Tetrahedrons</h4>
+          <p>Four Stage 2 clusters assembled in the same pattern. This is your community's final pyramid — it'll be big!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 1: MAKE THE TETRAHEDRONS -->
+    <section class="tutorial-section">
+      <h2>Step 1 — Make the Tetrahedrons</h2>
+      <p>Each person in your community needs to make about <strong>11 tetrahedrons</strong> (64 total ÷ 6 people = about 11 each). Here's how.</p>
+
+      <div class="step-block">
+        <h3>A. Cut the Template</h3>
+        <p>Each tetrahedron is made from a single piece of paper cut into a specific shape — a strip of <strong>4 equilateral triangles</strong> connected in a row with a tab for gluing. Your teacher will provide the template. Trace it, cut it out carefully.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>B. Color Your Triangles</h3>
+        <p>This is where the art comes in! Each community should pick a <strong>color scheme</strong>. Some ideas: each person uses a different color, gradient from light to dark, rainbow pattern, or your community's team colors. Color both sides of the paper so it looks good from every angle.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>C. Fold and Glue</h3>
+        <p>Score along all fold lines using a ruler and the back of scissors (press firmly but don't cut through). Fold each triangle up. Tuck the tab inside and glue it shut. You now have a perfect tetrahedron!</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Quality Check</h3>
+        <p>Make sure each tetrahedron has clean edges, all faces are flat (not dented), and it sits flat on any face without wobbling. Bad tetrahedrons will make assembly harder — take your time!</p>
+      </div>
+    </section>
+
+    <!-- STEP 2: ASSEMBLE STAGE 1 -->
+    <section class="tutorial-section">
+      <h2>Step 2 — Assemble Stage 1 Clusters</h2>
+      <p>Now pairs work together to combine 4 tetrahedrons into Stage 1 clusters.</p>
+
+      <div class="step-block">
+        <h3>How to Arrange</h3>
+        <p>Place 3 tetrahedrons flat on the table in a triangle formation, with edges touching. Glue the touching edges together. Now place the 4th tetrahedron on top, sitting in the valley between the 3 bottom ones. Glue it in place. You now have a Stage 1 cluster — a mini Sierpinski pyramid!</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Notice the Pattern</h3>
+        <p>Look at your Stage 1 from the side. See the triangle shape? And in the center, there's an empty space shaped like an upside-down tetrahedron. That empty space IS the fractal — it's the piece you removed, just like the Sierpinski triangle rule.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>How Many Stage 1 Clusters?</h3>
+        <p>Your team needs <strong>16 Stage 1 clusters</strong> (64 ÷ 4 = 16). With 6 people, that's about 2-3 clusters each. Assembly line it!</p>
+      </div>
+    </section>
+
+    <!-- STEP 3: ASSEMBLE STAGE 2 -->
+    <section class="tutorial-section">
+      <h2>Step 3 — Assemble Stage 2</h2>
+      <p>Same pattern, bigger scale. Take 4 Stage 1 clusters and arrange them the same way.</p>
+
+      <div class="step-block">
+        <h3>How to Arrange</h3>
+        <p>Place 3 Stage 1 clusters on the table in a triangle formation with edges touching. Glue them together. Place the 4th on top. Glue carefully — it's heavier now, so hold it steady while the glue sets.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>You Need 4 Stage 2 Clusters</h3>
+        <p>16 Stage 1 clusters ÷ 4 = 4 Stage 2 clusters. Split your team: two pairs each build 2 Stage 2 clusters.</p>
+      </div>
+    </section>
+
+    <!-- STEP 4: FINAL ASSEMBLY -->
+    <section class="tutorial-section">
+      <h2>Step 4 — Final Assembly: Stage 3</h2>
+      <p>The whole community comes together for this one.</p>
+
+      <div class="step-block">
+        <h3>The Grand Build</h3>
+        <p>Same pattern one last time. Three Stage 2 clusters on the bottom in a triangle. The 4th on top. Glue everything carefully. Support the top piece while it dries — this is a team effort!</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Step Back and Look</h3>
+        <p>You've built a fractal. Every part of it is a smaller version of the whole thing. Stage 3 is made of 4 Stage 2s. Each Stage 2 is made of 4 Stage 1s. Each Stage 1 is made of 4 tetrahedrons. <strong>Same pattern, four levels deep.</strong></p>
+      </div>
+    </section>
+
+    <!-- THE MATH -->
+    <section class="tutorial-section">
+      <h2>The Math Behind Your Pyramid</h2>
+      <p>Your pyramid is a math lesson you can hold.</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Powers of 4</h4>
+          <p>Stage 0: 4⁰ = 1. Stage 1: 4¹ = 4. Stage 2: 4² = 16. Stage 3: 4³ = 64. Each stage multiplies by 4.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Self-Similarity</h4>
+          <p>Zoom into any corner of your pyramid — it looks exactly like the whole thing, just smaller. That's the defining property of a fractal.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Fractal Dimension</h4>
+          <p>A line is 1D. A square is 2D. A cube is 3D. The Sierpinski pyramid has a fractal dimension of about <strong>2</strong> — it lives in 3D space but has holes everywhere, so it's not quite a solid. Mind-bending!</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Surface Area vs. Volume</h4>
+          <p>As you add more stages, the surface area grows but the volume keeps getting holes punched out of it. At infinite stages, the Sierpinski tetrahedron has <strong>infinite surface area but zero volume</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE LEVELS -->
+    <section class="tutorial-section">
+      <h2>Challenge Levels</h2>
+
+      <div class="block-grid">
+        <div class="info-block challenge-basic" style="--block-color: #4CD964;">
+          <h4>Basic</h4>
+          <p>Make all 64 tetrahedrons cleanly and assemble the full Stage 3 pyramid. It stands on its own and looks great.</p>
+        </div>
+        <div class="info-block challenge-medium" style="--block-color: #4F9DFF;">
+          <h4>Medium</h4>
+          <p>Use a deliberate color pattern that shows the fractal levels — like different colors for each stage. Can someone looking at it tell where Stage 1 ends and Stage 2 begins?</p>
+        </div>
+        <div class="info-block challenge-advanced" style="--block-color: #9B6BFF;">
+          <h4>Advanced</h4>
+          <p>Calculate the total surface area of your pyramid (measure one tetrahedron, multiply). Figure out what fraction of the total volume is empty space. Present the math to your community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY PRESENTATION -->
+    <section class="tutorial-section">
+      <h2>Present Your Pyramid</h2>
+      <p>At the expo, your Sierpinski pyramid will be the centerpiece of your community display. Be ready to explain:</p>
+
+      <div class="step-block">
+        <h3>What to Present</h3>
+        <p>What is a fractal? How does the Sierpinski pattern work? How many tetrahedrons are in your pyramid? What does 4³ mean and why? What is self-similarity — can you show it by pointing to different parts of your pyramid? How did your team divide up the work?</p>
+      </div>
+    </section>
+
+    <a href="../index.html#math" class="back-link">Back to Math</a>
+  </div>
+
+  <div data-part="footer" data-base=".."></div>
+
+  <script src="../parts/loader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
