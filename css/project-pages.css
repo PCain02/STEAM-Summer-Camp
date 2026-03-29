@@ -7,6 +7,8 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 0 var(--page-pad) 3rem;
+  position: relative;
+  z-index: 2;
 }
 
 /* ============================================
