@@ -82,6 +82,26 @@ function initTabs() {
   });
 }
 
+function initHeaderMenu() {
+  const btn = document.querySelector('.header-menu-btn');
+  const dropdown = document.querySelector('.header-dropdown');
+  if (!btn || !dropdown) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = !dropdown.hidden;
+    dropdown.hidden = open;
+    btn.setAttribute('aria-expanded', !open);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.hidden && !dropdown.contains(e.target)) {
+      dropdown.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 // ============================================
 // Initialize after parts are loaded
 // ============================================
@@ -89,10 +109,12 @@ function initTabs() {
 document.addEventListener('partsLoaded', () => {
   createFloatingBlocks();
   initTabs();
+  initHeaderMenu();
 });
 
 // Fallback: if parts loader isn't present (shouldn't happen, but safe)
 if (!document.querySelector('[data-part]')) {
   createFloatingBlocks();
   initTabs();
+  initHeaderMenu();
 }

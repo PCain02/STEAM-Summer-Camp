@@ -7,8 +7,33 @@
     padding: 2rem var(--page-pad) 1.5rem;
   }
 
+  .home-link,
+  .header-menu {
+    position: static;
+  }
+
+  .header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .home-link {
+    order: -1;
+  }
+
+  .header-menu {
+    order: -1;
+  }
+
   .site-title {
     font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .site-subtitle {
+    width: 100%;
   }
 
   .block-letter {

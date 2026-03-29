@@ -52,42 +52,83 @@
 }
 
 /* ============================================
-   Header Nav Links (top-right corner)
+   Header Menu Dropdown (top-right corner)
    ============================================ */
 
-.header-links {
+.header-menu {
   position: absolute;
   top: 0;
   right: 0;
-  display: flex;
-  gap: 0.4rem;
+  z-index: 10;
 }
 
-.header-pill {
+.header-menu-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
   color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
   font-family: 'Fredoka', sans-serif;
   font-weight: 600;
-  font-size: 0.78rem;
-  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 2rem;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.2s ease;
   background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.header-pill:hover {
+.header-menu-btn:hover,
+.header-menu-btn[aria-expanded="true"] {
   color: #fff;
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
 }
 
-.header-pill svg {
+.header-menu-btn svg {
   flex-shrink: 0;
+}
+
+.header-dropdown {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 170px;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: fadeUp 0.2s ease;
+}
+
+.header-dropdown[hidden] {
+  display: none;
+}
+
+.header-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.15s ease;
+}
+
+.header-dropdown-item:hover {
+  background: var(--alt, #F0F4FF);
+}
+
+.header-dropdown-item + .header-dropdown-item {
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+
+.header-dropdown-item svg {
+  flex-shrink: 0;
+  color: var(--muted, #6B7280);
 }
 
 .site-title {
