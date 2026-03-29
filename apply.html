@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Application | STEAM Summer Camp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --science: #4CD964;
+      --technology: #9B6BFF;
+      --engineering: #FF9F43;
+      --art: #E6AC00;
+      --math: #4F9DFF;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --bg: #F0F4FF;
+      --surface: #FFFFFF;
+      --border: #E5E7EB;
+      --radius: 0.75rem;
+      --radius-sm: 0.5rem;
+    }
+
+    body {
+      font-family: 'Quicksand', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fredoka', 'Quicksand', sans-serif;
+    }
+
+    .application {
+      width: 8.5in;
+      margin: 0 auto;
+      background: var(--surface);
+    }
+
+    /* Header banner */
+    .app-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      padding: 0.4in 0.8in 0.35in;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-banner::before,
+    .app-banner::after {
+      content: "";
+      position: absolute;
+      border-radius: var(--radius-sm);
+      opacity: 0.1;
+    }
+    .app-banner::before {
+      width: 70px; height: 70px;
+      background: #FFD93D;
+      top: 10px; left: 40px;
+      transform: rotate(15deg);
+    }
+    .app-banner::after {
+      width: 50px; height: 50px;
+      background: #4CD964;
+      top: 15px; right: 50px;
+      transform: rotate(-20deg);
+    }
+
+    .steam-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      margin-bottom: 0.3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .block-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: var(--radius-sm);
+      position: relative;
+      box-shadow:
+        0 3px 0 rgba(0, 0, 0, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .block-letter::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .app-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-subtitle {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Content area */
+    .app-content {
+      padding: 0.3in 0.7in;
+    }
+
+    /* Intro text */
+    .app-intro {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* Section headings */
+    .form-section {
+      margin-bottom: 0.45rem;
+    }
+
+    .form-section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text);
+    }
+
+    .form-section-title .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Form fields */
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .field-row-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .field-line {
+      border: none;
+      border-bottom: 2px solid var(--border);
+      height: 1.4rem;
+      font-family: inherit;
+    }
+
+    .field-box {
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      min-height: 0.9in;
+    }
+
+    .field-box-sm {
+      min-height: 0.55in;
+    }
+
+    /* Checkbox/rating rows */
+    .check-row {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin: 0.2rem 0 0.35rem;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .checkbox {
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--border);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Rating scale */
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin: 0.15rem 0;
+    }
+
+    .rating-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--muted);
+      min-width: 2.5in;
+    }
+
+    .rating-circles {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .rating-circle {
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+    }
+
+    .rating-scale-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.1rem;
+      padding-left: 2.5in;
+    }
+
+    .rating-scale-labels span {
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-align: center;
+      width: 16px;
+    }
+
+    /* Signature area */
+    .sig-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+      padding-top: 0.3rem;
+      border-top: 2px solid var(--border);
+    }
+
+    /* Footer */
+    .app-footer {
+      text-align: center;
+      padding: 0.3rem 0.8in;
+      border-top: 2px solid var(--border);
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .app-footer .steam-mini {
+      display: inline-flex;
+      gap: 0.15rem;
+      margin-right: 0.3rem;
+      vertical-align: middle;
+    }
+
+    .app-footer .steam-mini span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+    }
+
+    /* Print button (screen only) */
+    .print-bar {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.8rem;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--technology);
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .print-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Print styles */
+    @media print {
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .application { width: auto; box-shadow: none; }
+      .print-bar { display: none; }
+    }
+
+    @media screen {
+      .application {
+        margin: 1.5rem auto;
+        box-shadow: 0 8px 32px rgba(31, 41, 55, 0.12);
+        border-radius: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <button class="print-btn" onclick="window.print()">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9" />
+        <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2" />
+        <rect x="6" y="14" width="12" height="8" />
+      </svg>
+      Print Application
+    </button>
+  </div>
+
+  <div class="application">
+    <div class="app-banner">
+      <div class="steam-logo">
+        <span class="block-letter" style="--accent: #4CD964;">S</span>
+        <span class="block-letter" style="--accent: #9B6BFF;">T</span>
+        <span class="block-letter" style="--accent: #FF9F43;">E</span>
+        <span class="block-letter" style="--accent: #E6AC00;">A</span>
+        <span class="block-letter" style="--accent: #4F9DFF;">M</span>
+      </div>
+      <h1 class="app-title">Adventure Camp — Student Application</h1>
+      <p class="app-subtitle">Summer 2026 &bull; Grades 4–6 &bull; 24 Spots Available</p>
+    </div>
+
+    <div class="app-content">
+
+      <p class="app-intro">Thank you for your interest in the STEAM Adventure Camp! This 8-day program is designed for curious, motivated students in grades 4–6. Please fill out this application completely and return it to your teacher. Space is limited to 24 students.</p>
+
+      <!-- STUDENT INFO -->
+      <div class="form-section">
+        <h2 class="form-section-title"><span class="dot" style="background: var(--technology);"></span> Student Information</h2>
+        <div class="field-row">
+          <div class="field">
+            <label>First Name</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <div class="field-line"></div>
+          </div>
+        </div>
+        <div class="field-row field-row-3">
+          <div class="field">
+            <label>Grade (Fall 2026)</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Age</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Homeroom Teacher</label>
+            <div class="field-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARENT/GUARDIAN -->
+      <div class="form-section">
+        <h2 class="form-section-title"><span class="dot" style="background: var(--science);"></span> Parent / Guardian Contact</h2>
+        <div class="field-row">
+          <div class="field">
+            <label>Parent/Guardian Name</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Relationship</label>
+            <div class="field-line"></div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Phone Number</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Email Address</label>
+            <div class="field-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTEREST -->
+      <div class="form-section">
+        <h2 class="form-section-title"><span class="dot" style="background: var(--engineering);"></span> Student Interest</h2>
+
+        <label style="font-size: 0.72rem; font-weight: 700; color: var(--muted);">Which STEAM areas are you most excited about? (check all that apply)</label>
+        <div class="check-row">
+          <div class="check-item"><div class="checkbox"></div> Science</div>
+          <div class="check-item"><div class="checkbox"></div> Technology</div>
+          <div class="check-item"><div class="checkbox"></div> Engineering</div>
+          <div class="check-item"><div class="checkbox"></div> Art</div>
+          <div class="check-item"><div class="checkbox"></div> Math</div>
+        </div>
+
+        <div class="field" style="margin-bottom: 0.35rem;">
+          <label>Why do you want to attend the STEAM Adventure Camp? (2–3 sentences)</label>
+          <div class="field-box"></div>
+        </div>
+
+        <div class="field">
+          <label>Describe a time you built, created, or solved something you're proud of.</label>
+          <div class="field-box"></div>
+        </div>
+      </div>
+
+      <!-- TEACHER ASSESSMENT -->
+      <div class="form-section">
+        <h2 class="form-section-title"><span class="dot" style="background: var(--math);"></span> Teacher Assessment</h2>
+        <p style="font-size: 0.7rem; font-weight: 600; color: var(--muted); margin-bottom: 0.25rem;">To be completed by the student's homeroom or recommending teacher.</p>
+
+        <div class="rating-scale-labels">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        </div>
+
+        <div class="rating-row">
+          <span class="rating-label">Curiosity &amp; eagerness to learn</span>
+          <div class="rating-circles">
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+          </div>
+        </div>
+        <div class="rating-row">
+          <span class="rating-label">Listens well &amp; follows directions</span>
+          <div class="rating-circles">
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+          </div>
+        </div>
+        <div class="rating-row">
+          <span class="rating-label">Works well with others / teamwork</span>
+          <div class="rating-circles">
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+          </div>
+        </div>
+        <div class="rating-row">
+          <span class="rating-label">Willing to participate &amp; commit</span>
+          <div class="rating-circles">
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+          </div>
+        </div>
+        <div class="rating-row">
+          <span class="rating-label">Problem-solving &amp; persistence</span>
+          <div class="rating-circles">
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+            <div class="rating-circle"></div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top: 0.3rem;">
+          <label>Additional comments (optional)</label>
+          <div class="field-box field-box-sm"></div>
+        </div>
+      </div>
+
+      <!-- SIGNATURES -->
+      <div class="form-section">
+        <h2 class="form-section-title"><span class="dot" style="background: var(--art);"></span> Signatures</h2>
+        <p style="font-size: 0.7rem; font-weight: 600; color: var(--muted); margin-bottom: 0.2rem;">By signing below, we confirm this student is interested in and committed to attending all 8 days of the STEAM Adventure Camp.</p>
+
+        <div class="sig-row">
+          <div class="field">
+            <label>Student Signature</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <div class="field-line"></div>
+          </div>
+        </div>
+        <div class="sig-row" style="border-top: none; padding-top: 0; margin-top: 0.25rem;">
+          <div class="field">
+            <label>Parent/Guardian Signature</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <div class="field-line"></div>
+          </div>
+        </div>
+        <div class="sig-row" style="border-top: none; padding-top: 0; margin-top: 0.25rem;">
+          <div class="field">
+            <label>Teacher Signature</label>
+            <div class="field-line"></div>
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <div class="field-line"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="app-footer">
+      <span class="steam-mini">
+        <span style="background: var(--science);"></span>
+        <span style="background: var(--technology);"></span>
+        <span style="background: var(--engineering);"></span>
+        <span style="background: var(--art);"></span>
+        <span style="background: var(--math);"></span>
+      </span>
+      Please return completed applications to your homeroom teacher &bull; Space is limited to 24 students
+    </div>
+  </div>
+
+</body>
+</html>

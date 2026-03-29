@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Schedule & Meals | STEAM Summer Camp</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .schedule-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--page-pad) 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .schedule-hero {
+      background: linear-gradient(145deg, #fefefe, #f0f4ff);
+      border: 2px solid var(--engineering);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      animation: blockPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s backwards;
+      box-shadow:
+        0 4px 0 var(--engineering),
+        0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .schedule-hero::before,
+    .schedule-hero::after {
+      content: "";
+      position: absolute;
+      top: -7px;
+      width: 14px;
+      height: 7px;
+      background: var(--engineering);
+      border-radius: 5px 5px 0 0;
+    }
+    .schedule-hero::before { left: 22px; }
+    .schedule-hero::after { left: 44px; }
+
+    .schedule-hero h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--engineering);
+    }
+
+    .schedule-hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      font-weight: 600;
+    }
+
+    /* Day cards */
+    .day-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease backwards;
+      box-shadow: 0 4px 0 var(--border), 0 6px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .day-card:nth-child(odd) { --day-accent: var(--technology); }
+    .day-card:nth-child(even) { --day-accent: var(--engineering); }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: linear-gradient(145deg, #fefefe, #f5f0ff);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .day-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      background: var(--day-accent);
+      color: #fff;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+      box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    .day-number::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 5px;
+      background: var(--day-accent);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .day-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .day-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* Meal grid */
+    .meal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+
+    .meal {
+      padding: 1rem 1.25rem;
+      border-right: 2px solid var(--border);
+    }
+
+    .meal:last-child {
+      border-right: none;
+    }
+
+    .meal-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .meal-label .meal-icon {
+      font-size: 1rem;
+    }
+
+    .meal-breakfast .meal-label { color: var(--science); }
+    .meal-snack .meal-label { color: var(--art); }
+    .meal-lunch .meal-label { color: var(--technology); }
+
+    .meal-content {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      min-height: 2.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .meal-tbd {
+      color: var(--muted);
+      font-weight: 600;
+      font-style: italic;
+      font-size: 0.85rem;
+    }
+
+    /* Info note */
+    .schedule-note {
+      background: linear-gradient(145deg, #efe6ff, #f5f0ff);
+      border: 2px solid var(--technology);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      animation: fadeUp 0.5s ease 0.3s backwards;
+    }
+
+    .schedule-note h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--technology);
+      margin: 0 0 0.4rem;
+    }
+
+    .schedule-note p {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--engineering);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--engineering);
+      border-radius: 2rem;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: var(--engineering);
+      color: #fff;
+      transform: translateX(-4px);
+    }
+
+    @media (max-width: 600px) {
+      .meal-grid {
+        grid-template-columns: 1fr;
+      }
+      .meal {
+        border-right: none;
+        border-bottom: 2px solid var(--border);
+      }
+      .meal:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Shared parts -->
+  <div data-part="bg-blocks"></div>
+  <div data-part="header"></div>
+
+  <div class="schedule-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Daily Schedule & Meals</span>
+    </nav>
+
+    <div class="schedule-hero">
+      <h1>Daily Schedule & Meals</h1>
+      <p>Camp runs from 8:30 AM to 2:30 PM each day. Every camper gets breakfast, a morning snack, and lunch. Here's what to expect each day.</p>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">1</div>
+        <div>
+          <div class="day-title">Day 1</div>
+          <div class="day-date">Introductions & Setup</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">2</div>
+        <div>
+          <div class="day-title">Day 2</div>
+          <div class="day-date">LEDs & Sensors</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">3</div>
+        <div>
+          <div class="day-title">Day 3</div>
+          <div class="day-date">Buttons & Automation</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">4</div>
+        <div>
+          <div class="day-title">Day 4</div>
+          <div class="day-date">Smart Rules & House Showcase</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">5</div>
+        <div>
+          <div class="day-title">Day 5</div>
+          <div class="day-date">Robot Car Assembly</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">6</div>
+        <div>
+          <div class="day-title">Day 6</div>
+          <div class="day-date">Motors & Movement</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">7</div>
+        <div>
+          <div class="day-title">Day 7</div>
+          <div class="day-date">Functions & Vehicle Roles</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 8 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-number">8</div>
+        <div>
+          <div class="day-title">Day 8</div>
+          <div class="day-date">Community Expo</div>
+        </div>
+      </div>
+      <div class="meal-grid">
+        <div class="meal meal-breakfast">
+          <div class="meal-label">Breakfast</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-snack">
+          <div class="meal-label">Snack</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+        <div class="meal meal-lunch">
+          <div class="meal-label">Lunch</div>
+          <div class="meal-content"><span class="meal-tbd">TBD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-note">
+      <h3>Allergy & Dietary Needs</h3>
+      <p>All meals will accommodate common food allergies and dietary restrictions. Parents/guardians will be asked to submit allergy information during registration. Specific menus will be finalized before camp begins and shared with families in advance.</p>
+    </div>
+
+    <a href="index.html" class="back-link">Back to Home</a>
+  </div>
+
+  <div data-part="footer"></div>
+
+  <script src="parts/loader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -107,6 +107,22 @@
   font-weight: 600;
 }
 
+/* In-progress badge for placeholder activities */
+.in-progress-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.7rem;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--block-color, var(--muted));
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
 /* ============================================
    Project Cards (Technology section)
    ============================================ */
