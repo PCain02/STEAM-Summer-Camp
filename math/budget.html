@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget &amp; Expenses | STEAM Summer Camp</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div data-part="bg-blocks" data-base=".."></div>
+  <div data-part="header" data-base=".."></div>
+
+  <div class="page-wrapper" style="--project-accent: #4F9DFF;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../index.html#math">Math</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Budget &amp; Expenses</span>
+    </nav>
+
+    <div class="project-hero">
+      <h1>Budget &amp; Expenses</h1>
+      <p>Every great project needs a plan for money. You'll learn to create budgets, track expenses, build tax tables, and develop an economic plan for your entire community — the same skills that run real cities, businesses, and households.</p>
+    </div>
+
+    <!-- WHAT IS A BUDGET? -->
+    <section class="tutorial-section">
+      <h2>What Is a Budget?</h2>
+      <p>A budget is a plan for how money will be spent. It lists what you expect to earn (income) and what you expect to spend (expenses). Every project, business, household, and community needs a budget — without one, you run out of money before you run out of things to build.</p>
+
+      <div class="step-block">
+        <h3>Why Budgets Matter</h3>
+        <p>Imagine you're building a bridge for your community. You have $50 to spend on materials. If you buy $30 worth of wood, $15 worth of glue, and then realize you need $10 worth of paint — you're $5 over budget! A budget helps you plan ahead so you don't get stuck halfway through a project with empty pockets.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>The Golden Rule of Budgets</h3>
+        <p><strong>Income must meet or exceed expenses.</strong> That's it. If you're spending more than you're earning, you're in trouble. If you're earning more than you're spending, you're building savings. Every budget decision comes down to this one rule.</p>
+      </div>
+    </section>
+
+    <!-- KEY TERMS -->
+    <section class="tutorial-section">
+      <h2>Key Terms You Need to Know</h2>
+      <p>Before we start crunching numbers, let's learn the vocabulary. These are the same words used by accountants, business owners, and city planners.</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Income</h4>
+          <p>Money coming IN. For a community, this comes from taxes, fees, and businesses. For a project, it's your budget allowance — the amount you have to work with.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4CD964;">
+          <h4>Expenses</h4>
+          <p>Money going OUT. Everything you spend — materials, supplies, services. If you buy 10 popsicle sticks at $0.05 each, that's a $0.50 expense.</p>
+        </div>
+        <div class="info-block" style="--block-color: #FF9F43;">
+          <h4>Profit &amp; Loss</h4>
+          <p><strong>Profit</strong> = income minus expenses (when income is bigger). <strong>Loss</strong> = expenses minus income (when expenses are bigger). Profit is good. Loss means trouble.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Tax</h4>
+          <p>A percentage of money collected by a government (or community) to pay for shared services. If sales tax is 8%, an item that costs $1.00 actually costs $1.08.</p>
+        </div>
+        <div class="info-block" style="--block-color: #E6AC00;">
+          <h4>Budget</h4>
+          <p>The plan that lists all expected income and expenses. It's created BEFORE you spend anything, so you know if your plan will work.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Expense Report</h4>
+          <p>A record of what you ACTUALLY spent. Created AFTER (or during) a project. Comparing your budget to your expense report shows if you stayed on track.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATING A MATERIALS LIST -->
+    <section class="tutorial-section">
+      <h2>Creating a Materials List</h2>
+      <p>Every STEAM project starts with materials. Before you build anything, you need to know exactly what you need and what it costs.</p>
+
+      <div class="step-block">
+        <h3>How to Build a Materials List</h3>
+        <p>For each project, list every single item you need. Be specific! Don't write "wood" — write "popsicle sticks" or "balsa wood strips, 12 inches." Then figure out how many you need and what each one costs.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Example: Bridge Project Materials</h3>
+        <p>Here's what a materials list looks like in table format:</p>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin: 1em 0; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden;">
+            <thead>
+              <tr style="background: rgba(79,157,255,0.2);">
+                <th style="padding: 10px 14px; text-align: left; border-bottom: 2px solid rgba(79,157,255,0.3);">Item</th>
+                <th style="padding: 10px 14px; text-align: center; border-bottom: 2px solid rgba(79,157,255,0.3);">Quantity</th>
+                <th style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(79,157,255,0.3);">Unit Cost</th>
+                <th style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(79,157,255,0.3);">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Popsicle sticks</td>
+                <td style="padding: 8px 14px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">100</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$0.05</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$5.00</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Wood glue (bottle)</td>
+                <td style="padding: 8px 14px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">2</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$3.50</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$7.00</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Cardboard base</td>
+                <td style="padding: 8px 14px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">1</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$2.00</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$2.00</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">String (roll)</td>
+                <td style="padding: 8px 14px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">1</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$1.50</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$1.50</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Paint set</td>
+                <td style="padding: 8px 14px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">1</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$4.00</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$4.00</td>
+              </tr>
+              <tr style="font-weight: bold; background: rgba(79,157,255,0.1);">
+                <td style="padding: 10px 14px;" colspan="3">TOTAL</td>
+                <td style="padding: 10px 14px; text-align: right;">$19.50</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>The math:</strong> Quantity &times; Unit Cost = Total for each row. Then add all the totals together for your grand total. This uses <strong>multiplication</strong> and <strong>addition</strong> — math skills you use every day.</p>
+      </div>
+    </section>
+
+    <!-- CREATING AN EXPENSE REPORT -->
+    <section class="tutorial-section">
+      <h2>Creating an Expense Report</h2>
+      <p>An expense report tracks what you <em>actually</em> spent. It looks just like your budget, but with real numbers instead of estimates. Sometimes you spend more than planned, sometimes less.</p>
+
+      <div class="step-block">
+        <h3>Budget vs. Actual</h3>
+        <p>After your project, compare your budget to your expense report. Did you stay under budget? Go over? By how much? This is how real businesses and cities track their finances.</p>
+        <p><strong>Example:</strong> You budgeted $5.00 for popsicle sticks (100 at $0.05 each) but only needed 80. Your actual cost: 80 &times; $0.05 = $4.00. You saved $1.00! That leftover money can go to another part of your project.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Math Skills in Action</h3>
+        <p>Creating budgets and expense reports uses all of these math skills:</p>
+        <ul>
+          <li><strong>Addition:</strong> Adding up totals for each row and the grand total</li>
+          <li><strong>Subtraction:</strong> Figuring out how much you're over or under budget</li>
+          <li><strong>Multiplication:</strong> Quantity &times; Unit Cost = Total</li>
+          <li><strong>Decimals:</strong> Working with dollars and cents ($3.50, $0.05)</li>
+          <li><strong>Percentages:</strong> Calculating tax, discounts, and how much of your budget is used</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- COMMUNITY ECONOMICS -->
+    <section class="tutorial-section">
+      <h2>Community Economics</h2>
+      <p>Your STEAM community isn't just building things — it's a mini town. And every town needs money to run. Let's learn how real community economics work.</p>
+
+      <div class="step-block">
+        <h3>Where Does Community Money Come From?</h3>
+        <p>Real cities get money from several sources. Your community will set up the same systems:</p>
+        <ul>
+          <li><strong>Sales Tax:</strong> A percentage added to every purchase. If your community sets a 5% sales tax, a $10 item costs $10.50. The extra $0.50 goes to the community.</li>
+          <li><strong>Property Tax:</strong> A fee based on the value of buildings and land. If a house is worth $1,000 and the property tax rate is 2%, the owner pays $20 per year to the community.</li>
+          <li><strong>Business Fees:</strong> Businesses pay fees for licenses and permits to operate in the community.</li>
+          <li><strong>Fines &amp; Fees:</strong> Parking tickets, library late fees, permits for building — these all bring in small amounts of revenue.</li>
+        </ul>
+      </div>
+
+      <div class="step-block">
+        <h3>What Does a Community Spend Money On?</h3>
+        <p>All that income goes right back into serving the community:</p>
+        <ul>
+          <li><strong>Roads &amp; Infrastructure:</strong> Building and maintaining streets, bridges, water systems</li>
+          <li><strong>Schools:</strong> Teacher salaries, books, supplies, buildings</li>
+          <li><strong>Emergency Services:</strong> Fire department, police, ambulance</li>
+          <li><strong>Parks &amp; Recreation:</strong> Playgrounds, sports fields, community centers</li>
+          <li><strong>Public Buildings:</strong> Library, town hall, post office</li>
+          <li><strong>Utilities:</strong> Water treatment, electricity grid, waste collection</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAX TABLE -->
+    <section class="tutorial-section">
+      <h2>Building a Tax Table</h2>
+      <p>Your community needs a tax system. You'll decide the rates, calculate the revenue, and make sure there's enough money to pay for everything your community needs.</p>
+
+      <div class="step-block">
+        <h3>Sales Tax Table</h3>
+        <p>Pick a sales tax rate for your community (most real cities use 5%–10%). Then calculate the tax on common purchases:</p>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin: 1em 0; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden;">
+            <thead>
+              <tr style="background: rgba(76,217,100,0.2);">
+                <th style="padding: 10px 14px; text-align: left; border-bottom: 2px solid rgba(76,217,100,0.3);">Item</th>
+                <th style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(76,217,100,0.3);">Price</th>
+                <th style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(76,217,100,0.3);">Tax (7%)</th>
+                <th style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(76,217,100,0.3);">Total with Tax</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Groceries</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$25.00</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$1.75</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$26.75</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">New bicycle</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$150.00</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$10.50</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$160.50</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">School supplies</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$12.00</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$0.84</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$12.84</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>The math:</strong> Tax = Price &times; Tax Rate. For 7% tax: $25.00 &times; 0.07 = $1.75. Then Total = Price + Tax. This is <strong>percentages</strong> and <strong>decimal multiplication</strong> in action!</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Property Tax Table</h3>
+        <p>Your community also collects property tax. Decide on a rate (real cities use 1%–3%) and apply it to buildings:</p>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin: 1em 0; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden;">
+            <thead>
+              <tr style="background: rgba(155,107,255,0.2);">
+                <th style="padding: 10px 14px; text-align: left; border-bottom: 2px solid rgba(155,107,255,0.3);">Building</th>
+                <th style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(155,107,255,0.3);">Value</th>
+                <th style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(155,107,255,0.3);">Tax (2%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">House</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$200,000</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$4,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Store</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$350,000</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$7,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Factory</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$500,000</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$10,000</td>
+              </tr>
+              <tr style="font-weight: bold; background: rgba(155,107,255,0.1);">
+                <td style="padding: 10px 14px;" colspan="2">TOTAL Revenue</td>
+                <td style="padding: 10px 14px; text-align: right;">$21,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- BALANCING A BUDGET -->
+    <section class="tutorial-section">
+      <h2>Balancing a Community Budget</h2>
+      <p>Now put it all together. A balanced budget means your total income equals or exceeds your total expenses. If expenses are higher, you need to cut spending or raise taxes. If income is higher, you have surplus to save or invest.</p>
+
+      <div class="step-block">
+        <h3>Example Community Budget</h3>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin: 1em 0; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden;">
+            <thead>
+              <tr style="background: rgba(230,172,0,0.2);">
+                <th style="padding: 10px 14px; text-align: left; border-bottom: 2px solid rgba(230,172,0,0.3);" colspan="2">Community Budget</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: rgba(76,217,100,0.1);">
+                <td style="padding: 10px 14px; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1);" colspan="2">INCOME</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Sales Tax Revenue</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$15,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Property Tax Revenue</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$21,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Business Fees</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$4,000</td>
+              </tr>
+              <tr style="font-weight: bold; background: rgba(76,217,100,0.15);">
+                <td style="padding: 10px 14px; border-bottom: 2px solid rgba(255,255,255,0.1);">Total Income</td>
+                <td style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(255,255,255,0.1);">$40,000</td>
+              </tr>
+              <tr style="background: rgba(255,79,79,0.1);">
+                <td style="padding: 10px 14px; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1);" colspan="2">EXPENSES</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Roads &amp; Infrastructure</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$12,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">School</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$10,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Emergency Services</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$8,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Parks &amp; Recreation</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$5,000</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 14px; border-bottom: 1px solid rgba(255,255,255,0.1);">Utilities</td>
+                <td style="padding: 8px 14px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.1);">$4,000</td>
+              </tr>
+              <tr style="font-weight: bold; background: rgba(255,79,79,0.15);">
+                <td style="padding: 10px 14px; border-bottom: 2px solid rgba(255,255,255,0.1);">Total Expenses</td>
+                <td style="padding: 10px 14px; text-align: right; border-bottom: 2px solid rgba(255,255,255,0.1);">$39,000</td>
+              </tr>
+              <tr style="font-weight: bold; background: rgba(79,157,255,0.15);">
+                <td style="padding: 12px 14px;">SURPLUS (Income - Expenses)</td>
+                <td style="padding: 12px 14px; text-align: right;">$1,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>This budget has a <strong>$1,000 surplus</strong> — income exceeds expenses. That's a balanced, healthy budget! The surplus can be saved for emergencies or future projects.</p>
+      </div>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="tutorial-section">
+      <h2>Activity 1: Project Materials Budget</h2>
+      <p>Pick one of your STEAM builds (bridge, tower, house, Sierpinski pyramid, etc.) and create a complete materials budget.</p>
+
+      <div class="step-block">
+        <h3>Instructions</h3>
+        <ol>
+          <li>List every material your project needs (be specific — not just "paper" but "card stock sheets, 8.5 x 11 inches")</li>
+          <li>Count how many of each item you need</li>
+          <li>Research or estimate the cost per item</li>
+          <li>Create a table: Item | Quantity | Unit Cost | Total</li>
+          <li>Calculate the total cost for each line: Quantity &times; Unit Cost</li>
+          <li>Add up all line totals for your Grand Total</li>
+          <li>If your teacher gives you a budget limit, check: are you under budget or over? If over, what can you cut?</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tutorial-section">
+      <h2>Activity 2: Community Economic Plan</h2>
+      <p>Now think bigger. Your entire community needs an economic plan — where money comes from and where it goes.</p>
+
+      <div class="step-block">
+        <h3>Instructions</h3>
+        <ol>
+          <li><strong>Decide your tax rates:</strong> What will your sales tax be? (Pick a percentage between 5% and 10%.) What will your property tax rate be? (Pick between 1% and 3%.)</li>
+          <li><strong>Calculate income:</strong> Estimate how much your community earns from sales tax, property tax, and business fees. Build a tax table for common purchases and properties in your community.</li>
+          <li><strong>List expenses:</strong> What does your community need to spend money on? (Roads, school, fire station, parks, etc.) Estimate costs for each.</li>
+          <li><strong>Balance the budget:</strong> Does income cover expenses? If not, do you raise taxes or cut spending? Both have consequences — discuss as a team!</li>
+          <li><strong>Present your plan:</strong> Create a poster or document showing your community's complete economic plan with all the numbers.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MATH SKILLS SUMMARY -->
+    <section class="tutorial-section">
+      <h2>Math Skills You're Using</h2>
+      <p>Budgeting is real-world math. Here's every skill you're practicing:</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Addition &amp; Subtraction</h4>
+          <p>Adding up totals, calculating profit/loss, finding the difference between budget and actual spending.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4CD964;">
+          <h4>Multiplication</h4>
+          <p>Quantity &times; Unit Cost for every line item. This is the most-used operation in budgeting.</p>
+        </div>
+        <div class="info-block" style="--block-color: #FF9F43;">
+          <h4>Percentages</h4>
+          <p>Calculating sales tax (7% of $25), property tax (2% of $200,000), and what percentage of your budget each expense uses.</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Decimals</h4>
+          <p>Working with dollars and cents: $3.50, $0.05, $1,234.56. Lining up decimal points is crucial for accurate math.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE LEVELS -->
+    <section class="tutorial-section">
+      <h2>Challenge Levels</h2>
+
+      <div class="block-grid">
+        <div class="info-block challenge-basic" style="--block-color: #4CD964;">
+          <h4>Basic</h4>
+          <p>Create a complete materials budget for one of your STEAM projects. Include at least 5 items with quantities, unit costs, and totals. Calculate the grand total accurately.</p>
+        </div>
+        <div class="info-block challenge-medium" style="--block-color: #4F9DFF;">
+          <h4>Medium</h4>
+          <p>Create materials budgets for ALL of your community's projects (bridge, tower, house, pyramid, etc.) plus build a sales tax table with at least 5 items and a property tax table for your community buildings.</p>
+        </div>
+        <div class="info-block challenge-advanced" style="--block-color: #9B6BFF;">
+          <h4>Advanced</h4>
+          <p>Develop a full community economic plan: set tax rates, calculate total income from all sources, list all community expenses, balance the budget, and present it as a professional-looking financial document. Include a pie chart showing where the money goes.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#math" class="back-link">Back to Math</a>
+  </div>
+
+  <div data-part="footer" data-base=".."></div>
+  <script src="../parts/loader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electricity | STEAM Summer Camp</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Shared parts -->
+  <div data-part="bg-blocks" data-base=".."></div>
+  <div data-part="header" data-base=".."></div>
+
+  <div class="page-wrapper" style="--project-accent: #4CD964;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../index.html#science">Science</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Electricity</span>
+    </nav>
+
+    <div class="project-hero">
+      <h1>Electricity</h1>
+      <p>What makes the lights turn on? How does your phone charge? Discover how electrons flow, learn the difference between AC and DC power, meet the genius inventor Nikola Tesla, and build your own working circuits with batteries and LEDs.</p>
+    </div>
+
+    <!-- COMMUNITY CONNECTION -->
+    <section class="tutorial-section">
+      <h2>Electricity in Your Community</h2>
+      <p>Everything in your town runs on electricity — street lights, traffic signals, schools, hospitals, your home. But have you ever wondered where it comes from and how it gets to you?</p>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #4CD964;">
+          <h4>The Power Grid</h4>
+          <p>Electricity is made at power plants, then travels through huge transmission lines, into your neighborhood's transformers, and finally into your house through wires in the walls.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4CD964;">
+          <h4>Where Does Your Power Come From?</h4>
+          <p>Does your town use coal, natural gas, nuclear, solar, wind, or hydroelectric power? Different communities get their electricity from different sources.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4CD964;">
+          <h4>What If It Went Out?</h4>
+          <p>Imagine your town without electricity for a week. No lights, no refrigerators, no internet, no charging phones. What would be the hardest part? Electricity is something we take for granted every day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 1: WHAT IS ELECTRICITY? -->
+    <section class="tutorial-section">
+      <h2>Step 1 — What Is Electricity?</h2>
+      <p>To understand electricity, you need to zoom in really, really small — to the atom.</p>
+
+      <div class="step-block">
+        <h3>Atoms and Electrons</h3>
+        <p>Everything around you is made of <strong>atoms</strong> — tiny particles too small to see. Each atom has a center (the <strong>nucleus</strong>) surrounded by even tinier particles called <strong>electrons</strong> that orbit around it. Electrons have a <strong>negative charge</strong>, and they can move from one atom to another. When electrons flow from atom to atom through a material, that flow is what we call <strong>electricity</strong>.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Conductors and Insulators</h3>
+        <p>Some materials let electrons flow through them easily — these are called <strong>conductors</strong>. Metals like copper and aluminum are great conductors, which is why wires are made of metal. Other materials block the flow of electrons — these are <strong>insulators</strong>. Rubber, plastic, and glass are insulators. That's why wires have a plastic coating — it keeps the electricity safely inside!</p>
+      </div>
+    </section>
+
+    <!-- STEP 2: STATIC vs CURRENT -->
+    <section class="tutorial-section">
+      <h2>Step 2 — Static vs. Current Electricity</h2>
+      <p>There are two main types of electricity, and they behave very differently.</p>
+
+      <div class="step-block">
+        <h3>Static Electricity</h3>
+        <p><strong>Static electricity</strong> happens when electrons build up on a surface and then suddenly jump to another surface. Rub a balloon on your hair — electrons move from your hair to the balloon, giving the balloon a negative charge. Your hair, now positively charged, stands up and reaches toward the balloon. Lightning is static electricity on a massive scale — electrons jump from a cloud to the ground in a giant spark!</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Current Electricity</h3>
+        <p><strong>Current electricity</strong> is a continuous, controlled flow of electrons through a conductor (like a wire). This is the useful kind — the kind that powers your devices. Think of it like water flowing through a pipe: static electricity is like a water balloon popping (one big splash), while current electricity is like a faucet running (steady, controllable flow).</p>
+      </div>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #FF9F43;">
+          <h4>Fun Fact</h4>
+          <p>A bolt of lightning carries about 300 million volts and heats the air around it to 30,000 Kelvin — that's 5 times hotter than the surface of the sun!</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>Try It</h4>
+          <p>Rub a balloon on your hair or a wool sweater, then hold it near small pieces of torn paper. The paper will jump up and stick to the balloon. That's static electricity in action!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: DC -->
+    <section class="tutorial-section">
+      <h2>Step 3 — Direct Current (DC)</h2>
+      <p>Now let's talk about the two types of current electricity. First up: DC.</p>
+
+      <div class="step-block">
+        <h3>What Is DC?</h3>
+        <p><strong>Direct Current (DC)</strong> means electrons flow in <strong>one direction only</strong> — like a one-way street. Current flows from the negative end of a battery, through the circuit, and back to the positive end. It's a steady, constant flow in a single direction.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Where Do We Use DC?</h3>
+        <p>DC power is everywhere in small electronics: <strong>batteries</strong> (AA, AAA, phone batteries, car batteries), <strong>flashlights</strong>, <strong>phones and tablets</strong>, <strong>LED lights</strong>, <strong>cars</strong> (the electrical system runs on DC from the battery), and <strong>USB chargers</strong>. Basically, if it runs on a battery, it uses DC.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Thomas Edison and DC</h3>
+        <p><strong>Thomas Edison</strong> was a famous American inventor who championed DC electricity. He built the first power station in New York City in 1882, lighting up part of Manhattan with DC power. Edison believed DC was the future of electricity. But there was a problem — DC power couldn't travel very far. It weakened quickly over distance, which meant you needed a power station every few blocks. This was expensive and impractical for big cities, let alone entire countries.</p>
+      </div>
+    </section>
+
+    <!-- STEP 4: AC -->
+    <section class="tutorial-section">
+      <h2>Step 4 — Alternating Current (AC)</h2>
+      <p>Enter the other type of current — and the one that powers your home right now.</p>
+
+      <div class="step-block">
+        <h3>What Is AC?</h3>
+        <p><strong>Alternating Current (AC)</strong> means electrons rapidly switch direction — flowing forward, then backward, then forward again, over and over. In the US, this happens <strong>60 times per second</strong> (60 Hz). It sounds chaotic, but this back-and-forth motion is actually incredibly useful because AC can be easily converted to higher or lower voltages using a device called a <strong>transformer</strong>.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Why AC Wins for Power Delivery</h3>
+        <p>Here's the key advantage: you can boost AC to super high voltages for long-distance travel (hundreds of miles through power lines), then step it back down to safe voltages for your home. DC couldn't do this efficiently in the 1800s. This is why the entire electrical grid — the system that delivers power to every building in your community — uses AC.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Where Do We Use AC?</h3>
+        <p>AC powers everything plugged into a <strong>wall outlet</strong>: refrigerators, washing machines, microwaves, TVs, air conditioners, and lamps. Your phone charger actually converts AC from the wall into DC for your phone's battery — it's an AC-to-DC converter!</p>
+      </div>
+    </section>
+
+    <!-- STEP 5: TESLA AND THE WAR OF CURRENTS -->
+    <section class="tutorial-section">
+      <h2>Step 5 — Nikola Tesla and the War of Currents</h2>
+      <p>One of the greatest rivalries in science history was the battle between AC and DC — and the two brilliant men behind them.</p>
+
+      <div class="step-block">
+        <h3>Who Was Nikola Tesla?</h3>
+        <p><strong>Nikola Tesla</strong> (1856-1943) was a Serbian-American inventor and engineer who was, quite simply, a genius. He could visualize entire machines in his mind, rotating them and testing them mentally before ever building anything. Tesla moved to the US in 1884 and briefly worked for Edison — but the two clashed over their different visions for electricity.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>The War of Currents</h3>
+        <p>In the late 1880s, Edison (Team DC) and Tesla (Team AC, backed by businessman George Westinghouse) battled for control of America's electrical future. Edison tried to prove AC was dangerous by publicly electrocuting animals — a dark chapter in science history. But Tesla and Westinghouse won the war in 1893 when they lit up the entire World's Fair in Chicago with AC power, dazzling millions of visitors. Then they built a power plant at Niagara Falls that sent AC electricity to cities 20 miles away — something DC simply couldn't do.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Tesla's Greatest Inventions</h3>
+        <p>Tesla's contributions went far beyond AC power. He invented the <strong>AC motor</strong> (used in fans, washers, and factory machines today), developed the foundations for <strong>radio</strong> communication (though Marconi got the credit for years), built the famous <strong>Tesla coil</strong> (which creates spectacular lightning-like electrical arcs), and even envisioned <strong>wireless energy transmission</strong> — sending electricity through the air without wires. Many of his ideas were so far ahead of his time that we're still catching up.</p>
+      </div>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Tesla's Tragic End</h4>
+          <p>Despite his genius, Tesla died poor and alone in a New York hotel room in 1943. He gave the world AC power but never became rich from it. Today, an electric car company bears his name, and he's finally getting the recognition he deserved.</p>
+        </div>
+        <div class="info-block" style="--block-color: #FF9F43;">
+          <h4>Edison's Legacy</h4>
+          <p>Edison wasn't wrong about everything — DC is still used in batteries, electronics, and solar panels. He also invented the phonograph and improved the light bulb. The rivalry pushed both men to innovate faster.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 6: CIRCUITS -->
+    <section class="tutorial-section">
+      <h2>Step 6 — Build a Circuit</h2>
+      <p>Now it's your turn to make electricity do something! You'll build simple circuits using batteries, wires, and LEDs.</p>
+
+      <div class="step-block">
+        <h3>What Is a Circuit?</h3>
+        <p>A <strong>circuit</strong> is a complete loop that electricity flows through. It needs three things: a <strong>power source</strong> (like a battery), a <strong>load</strong> (something that uses the electricity, like an LED or buzzer), and <strong>conductors</strong> (wires to connect them). If there's any break in the loop, electricity stops flowing — that's an <strong>open circuit</strong>. A complete loop is a <strong>closed circuit</strong>.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Series Circuits</h3>
+        <p>In a <strong>series circuit</strong>, all the components are connected in a single loop — one after another, like train cars on a track. The electricity has only ONE path to follow. If one LED burns out, the whole circuit breaks and everything goes dark (like old-fashioned Christmas lights). The more LEDs you add, the dimmer they all get because they share the battery's power.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>Parallel Circuits</h3>
+        <p>In a <strong>parallel circuit</strong>, components are connected on separate branches — electricity has MULTIPLE paths to follow. If one LED burns out, the others stay lit because the electricity can still flow through the other branches. Each LED gets the full voltage from the battery, so they all glow brightly. This is how your house is wired — turning off one light doesn't kill every light in the house!</p>
+      </div>
+
+      <div class="block-grid">
+        <div class="info-block" style="--block-color: #4CD964;">
+          <h4>Materials Needed</h4>
+          <p>A battery (AA or 9V), battery holder or tape, insulated wire (with stripped ends), small LEDs, and optionally a small switch. Your teacher will provide these materials.</p>
+        </div>
+        <div class="info-block" style="--block-color: #4F9DFF;">
+          <h4>LED Tip</h4>
+          <p>LEDs have a long leg (+) and a short leg (-). The long leg connects toward the positive end of the battery. If your LED doesn't light up, try flipping it around!</p>
+        </div>
+        <div class="info-block" style="--block-color: #9B6BFF;">
+          <h4>Safety First</h4>
+          <p>Small batteries and LEDs are safe, but NEVER experiment with wall outlets or household wiring. Household electricity (120V AC) is extremely dangerous. Stick to batteries for hands-on work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HANDS-ON ACTIVITY -->
+    <section class="tutorial-section">
+      <h2>Hands-On: Build It!</h2>
+      <p>Follow these steps to build your first circuit, then experiment with series and parallel setups.</p>
+
+      <div class="step-block">
+        <h3>A. Simple Circuit</h3>
+        <p>Connect one wire from the positive (+) end of the battery to the long leg of an LED. Connect another wire from the short leg of the LED back to the negative (-) end of the battery. The LED should light up! If it doesn't, check: Is the loop complete? Is the LED facing the right way? Are the wires touching the battery terminals firmly?</p>
+      </div>
+
+      <div class="step-block">
+        <h3>B. Series Circuit</h3>
+        <p>Now add a second LED <em>in line</em> with the first. The short leg of LED #1 connects to the long leg of LED #2, and LED #2 connects back to the battery. Both should glow — but dimmer than before. Try removing one LED from the circuit. What happens to the other?</p>
+      </div>
+
+      <div class="step-block">
+        <h3>C. Parallel Circuit</h3>
+        <p>This time, give each LED its <em>own</em> direct path to and from the battery. Both LEDs connect to the positive terminal with separate wires, and both connect to the negative terminal with separate wires. Now both glow at full brightness! Remove one — the other stays lit.</p>
+      </div>
+
+      <div class="step-block">
+        <h3>D. Observe and Compare</h3>
+        <p>Write down your observations: Which circuit made LEDs brighter? What happened when you removed an LED from each type? Which type of circuit is used in your house, and why does that make sense?</p>
+      </div>
+    </section>
+
+    <!-- CHALLENGE LEVELS -->
+    <section class="tutorial-section">
+      <h2>Challenge Levels</h2>
+      <p>Pick your level and spark some learning!</p>
+
+      <div class="block-grid">
+        <div class="info-block challenge-basic" style="--block-color: #4CD964;">
+          <h4>Basic</h4>
+          <p>Build a simple circuit with one battery and one LED. Make it light up! Draw a diagram of your circuit labeling the battery, wire, and LED. Explain in your own words: What is a circuit, and why does it need to be a complete loop?</p>
+        </div>
+        <div class="info-block challenge-medium" style="--block-color: #4F9DFF;">
+          <h4>Medium</h4>
+          <p>Build BOTH a series circuit and a parallel circuit, each with at least 2 LEDs. Compare their brightness and behavior when one LED is removed. Draw labeled diagrams of both. Write a paragraph explaining the difference between series and parallel circuits and where each is used in real life.</p>
+        </div>
+        <div class="info-block challenge-advanced" style="--block-color: #9B6BFF;">
+          <h4>Advanced</h4>
+          <p>Complete the medium challenge, then research either Nikola Tesla or Thomas Edison in depth. Create a presentation (poster, slides, or report) covering their life, key inventions, and lasting impact on the world. Include at least 3 specific inventions with explanations of how they work. Present your findings to the class.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#science" class="back-link">Back to Science</a>
+  </div>
+
+  <div data-part="footer" data-base=".."></div>
+
+  <script src="../parts/loader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
