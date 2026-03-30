@@ -25,6 +25,13 @@
 
   .header-menu {
     order: -1;
+    position: relative;
+  }
+
+  .header-dropdown {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .site-title {
